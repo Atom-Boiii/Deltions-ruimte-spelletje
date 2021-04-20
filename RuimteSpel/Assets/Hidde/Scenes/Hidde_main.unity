@@ -408,6 +408,12 @@ MonoBehaviour:
   gunOrigin: {fileID: 1116945867455108024}
   rotateOrigin: {fileID: 724828633}
   target: {fileID: 4703520}
+  maxHealth: 100
+  rb: {fileID: 919132147970257283}
+  explosion: {fileID: 8473879462505808633, guid: a92f0a5a3a29ead4d8a756c2fe449f31,
+    type: 3}
+  initialExplosion: {fileID: 3624538832300168025, guid: 2f0f70041fb5ee049b8430e8230ff1bf,
+    type: 3}
 --- !u!23 &2994329778447670
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -498,6 +504,8 @@ GameObject:
   m_Component:
   - component: {fileID: 543450651705273144}
   - component: {fileID: 1986374954}
+  - component: {fileID: 919132147970257283}
+  - component: {fileID: 919132147970257284}
   m_Layer: 0
   m_Name: Pirate fighter All purpose V2
   m_TagString: Untagged
@@ -505,6 +513,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!54 &919132147970257283
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147970257282}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &919132147970257284
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147970257282}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2906205670695350515, guid: 99b89bce5da3399468cb8859c6250add, type: 3}
 --- !u!4 &1116945867455108024
 Transform:
   m_ObjectHideFlags: 0
@@ -513,7 +551,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269110925784135649}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5633798, y: 0.10094711, z: 4.991}
+  m_LocalPosition: {x: 1.5633798, y: 0.10094711, z: 6.747}
   m_LocalScale: {x: 1.07, y: 1.07, z: 1.07}
   m_Children: []
   m_Father: {fileID: 724828633}
@@ -592,7 +630,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577130390113069340}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.7538424}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 724828633}

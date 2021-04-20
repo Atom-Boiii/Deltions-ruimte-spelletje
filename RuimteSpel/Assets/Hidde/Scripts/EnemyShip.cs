@@ -2,15 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShips : MonoBehaviour
+public class EnemyShip : MonoBehaviour
 {
     public bool movement;
-    public float thrustSpeed, shootRange, speed;
+    public float thrustSpeed, shootRange;
     public Transform gunOrigin, rotateOrigin;
-
     public Transform target;
 
+    public float maxHealth;
+    private float health;
+
+
     private Vector3 direction;
+
+    private void Start()
+    {
+        
+    }
 
     public void Update()
     {
@@ -24,10 +32,8 @@ public class EnemyShips : MonoBehaviour
             }
             else
             {
-                float step = speed * Time.deltaTime;
-
                 // If there is a target rotate towards the target and fly towards it
-                rotateOrigin.rotation = Quaternion.RotateTowards(transform.rotation, target.rotation, step);
+                rotateOrigin.transform.LookAt(target);
                 direction = target.position - transform.position;
                 transform.Translate(direction.normalized * thrustSpeed * Time.deltaTime, Space.World);
             }

@@ -12,7 +12,7 @@ public class EnemyShip : MonoBehaviour
 
     [Header("Health")]
     public float maxHealth;
-    private float health;
+    private float health, deathCooldown;
     public Rigidbody rb;
     public GameObject explosion, initialExplosion;
 
@@ -28,26 +28,16 @@ public class EnemyShip : MonoBehaviour
     {
         if (movement)
         {
-            if (target == null)
-            {
-                // If there is no target just go forward
-                direction = transform.forward * thrustSpeed;
-                transform.Translate(direction.normalized * thrustSpeed * Time.deltaTime, Space.World);
-            }
-            else
-            {
-                // If there is a target rotate towards the target and fly towards it
-                rotateOrigin.transform.LookAt(target);
-                direction = target.position - transform.position;
-                transform.Translate(direction.normalized * thrustSpeed * Time.deltaTime, Space.World);
-            }
+            // If there is a target rotate towards the target and fly towards it
+            rotateOrigin.transform.LookAt(target);
+            direction = target.position - transform.position;
+            transform.Translate(direction.normalized * thrustSpeed * Time.deltaTime, Space.World);
         }
 
         if (Input.GetKeyDown(KeyCode.K))
         {
             TakeDamage(9999f);
         }
-
     }
 
     private void TakeDamage(float damageAmount)
@@ -66,6 +56,7 @@ public class EnemyShip : MonoBehaviour
 
         rb.isKinematic = false;
         rb.AddForce(transform.forward * 1000f);
+        rb.AddTorque(new Vector3(50f, 50f, 50f));
 
         GameObject go = Instantiate(initialExplosion, transform.position, transform.rotation);
 
@@ -73,17 +64,21 @@ public class EnemyShip : MonoBehaviour
         StartCoroutine(DestroyShip());
     }
 
+    private IEnumerator DestroyShip()
+    {
+        deathCooldown = Random.Range(1f, 3f);
+
+        yield return new WaitForSeconds(deathCooldown);
+
+        Quaternion rotation = Quaternion.Euler(-90f, 0f, 0f);
+
+        GameObject go = Instantiate(explosion, transform.position, rotation);
+
+        Destroy(go, 10f);
+        Destroy(gameObject);
+    }
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, shootRange);
-    }
-
-    private IEnumerator DestroyShip()
-    {
-        Quaternion rotation = Quaternion.Euler(-90f, 0f, 0f);
-        yield return new WaitForSeconds(3f);
-        GameObject go = Instantiate(explosion, transform.position, rotation);
-        Destroy(go, 10f);
-        Destroy(gameObject);
     }
 }

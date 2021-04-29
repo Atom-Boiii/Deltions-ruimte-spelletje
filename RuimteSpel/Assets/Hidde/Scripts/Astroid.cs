@@ -9,6 +9,7 @@ public class Astroid : MonoBehaviour
     public Vector2 scaleRange;
     public float maxHealth;
     public GameObject explosionEffect;
+    public int crystalAmount;
 
     private float health;
 
@@ -38,18 +39,24 @@ public class Astroid : MonoBehaviour
         }
     }
 
+    Vector3 crystalPos;
+
     private void Explode()
     {
         GameObject go = Instantiate(explosionEffect, transform.position, Quaternion.identity);
         Destroy(go, 5f);
         Destroy(gameObject);
 
-        int random = Random.Range(2, 5);
-
-        for (int i = 0; i < random; i++)
+        for (int i = 0; i < crystalAmount; i++)
         {
+            int random2 = Random.Range(6, 15);
+
+            crystalPos = transform.position + new Vector3(random2, random2, random2);
+
             GameObject tempCrystal = crystals[Random.Range(0, crystals.Length)];
-            Instantiate(tempCrystal, transform.position, transform.rotation);
+            GameObject crystalTemp = Instantiate(tempCrystal, crystalPos, transform.rotation);
+
+            crystalTemp.GetComponent<CrystalScript>().OnSpawn(crystalTemp.transform.localScale);
         }
     }
 }

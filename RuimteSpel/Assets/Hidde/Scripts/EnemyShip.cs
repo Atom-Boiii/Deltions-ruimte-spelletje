@@ -8,7 +8,7 @@ public class EnemyShip : MonoBehaviour
     public bool movement;
     public float thrustSpeed, shootRange;
     public Transform gunOrigin, rotateOrigin;
-    public Transform target;
+    public Transform playerTarget;
 
     [Header("Health")]
     public float maxHealth;
@@ -22,22 +22,31 @@ public class EnemyShip : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         health = maxHealth;
+
+        OnStart();
     }
 
     public void Update()
     {
-        if (movement)
+        if(playerTarget != null)
         {
-            // If there is a target rotate towards the target and fly towards it
-            rotateOrigin.transform.LookAt(target);
-            direction = target.position - transform.position;
-            transform.Translate(direction.normalized * thrustSpeed * Time.deltaTime, Space.World);
+            Debug.Log("sdsddsds");
+
+            if (movement)
+            {
+                // If there is a target rotate towards the target and fly towards it
+                rotateOrigin.transform.LookAt(playerTarget);
+                direction = playerTarget.position - transform.position;
+                transform.Translate(direction.normalized * thrustSpeed * Time.deltaTime, Space.World);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.K))
         {
             TakeDamage(9999f);
         }
+
+        OnEndUpdate();
     }
 
     private void TakeDamage(float damageAmount)
@@ -77,8 +86,12 @@ public class EnemyShip : MonoBehaviour
         Destroy(go, 10f);
         Destroy(gameObject);
     }
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, shootRange);
     }
+
+    public virtual void OnStart() { }
+    public virtual void OnEndUpdate() { }
 }

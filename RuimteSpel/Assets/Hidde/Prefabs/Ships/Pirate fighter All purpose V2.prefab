@@ -105,7 +105,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3474926861456805164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5633798, y: 0.10094711, z: 6.747}
+  m_LocalPosition: {x: 0.468, y: 0.029, z: 2.016}
   m_LocalScale: {x: 1.07, y: 1.07, z: 1.07}
   m_Children: []
   m_Father: {fileID: 3712506955255167764}
@@ -199,7 +199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3751428236195287541}
-  - component: {fileID: 3712506954002143207}
+  - component: {fileID: 1945007983426370958}
   - component: {fileID: 4558787097757616974}
   - component: {fileID: 4558787097757616969}
   m_Layer: 0
@@ -224,7 +224,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3712506954002143207
+--- !u!114 &1945007983426370958
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,21 +233,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 4558787097757616975}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1628f4af8327ee342bd2f5400e2dc427, type: 3}
+  m_Script: {fileID: 11500000, guid: 79600042a2524d74f81d32eff22c4c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movement: 1
   thrustSpeed: 50
-  shootRange: 50
+  shootRange: 500
   gunOrigin: {fileID: 4324943551588870517}
   rotateOrigin: {fileID: 3712506955255167764}
-  target: {fileID: 0}
+  playerTarget: {fileID: 0}
   maxHealth: 100
   rb: {fileID: 4558787097757616974}
   explosion: {fileID: 8473879462505808633, guid: a92f0a5a3a29ead4d8a756c2fe449f31,
     type: 3}
   initialExplosion: {fileID: 3624538832300168025, guid: 2f0f70041fb5ee049b8430e8230ff1bf,
     type: 3}
+  rotateSpeed: 20
+  fireRate: 5
 --- !u!54 &4558787097757616974
 Rigidbody:
   m_ObjectHideFlags: 0

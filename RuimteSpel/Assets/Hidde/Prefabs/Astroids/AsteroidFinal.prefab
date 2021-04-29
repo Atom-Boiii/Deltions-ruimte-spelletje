@@ -96,10 +96,11 @@ MonoBehaviour:
   crystals:
   - {fileID: 0}
   - {fileID: 0}
-  scaleRange: {x: 10, y: 30}
+  scaleRange: {x: 2, y: 5}
   maxHealth: 100
   explosionEffect: {fileID: 2228928763367222589, guid: 3dbf7642f4135eb458d52804e766c73e,
     type: 3}
+  crystalAmount: 0
 --- !u!135 &1854964323
 SphereCollider:
   m_ObjectHideFlags: 0

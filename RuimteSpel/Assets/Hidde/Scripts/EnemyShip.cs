@@ -30,7 +30,6 @@ public class EnemyShip : MonoBehaviour
     {
         if(playerTarget != null)
         {
-            Debug.Log("sdsddsds");
 
             if (movement)
             {

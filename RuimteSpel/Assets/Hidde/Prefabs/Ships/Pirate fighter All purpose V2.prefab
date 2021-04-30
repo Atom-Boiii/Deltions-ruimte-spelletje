@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 693436559571259709}
   - component: {fileID: 3300022574759974562}
   - component: {fileID: 1931991842690688800}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fighter frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4324943551588870517}
   - component: {fileID: 3632742343233843536}
   - component: {fileID: 3715428136219467771}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gun spining part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3712506955255167764}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Origin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 1945007983426370958}
   - component: {fileID: 4558787097757616974}
   - component: {fileID: 4558787097757616969}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pirate fighter All purpose V2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,6 +249,10 @@ MonoBehaviour:
   initialExplosion: {fileID: 3624538832300168025, guid: 2f0f70041fb5ee049b8430e8230ff1bf,
     type: 3}
   rotateSpeed: 20
+  mask:
+    serializedVersion: 2
+    m_Bits: 55
+  range: 100
   fireRate: 5
 --- !u!54 &4558787097757616974
 Rigidbody:

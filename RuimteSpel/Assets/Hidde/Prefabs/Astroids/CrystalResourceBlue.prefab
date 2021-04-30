@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7701735700278151054}
   - component: {fileID: 9073712543113781307}
   - component: {fileID: 2116708236462369429}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CrystalResourceBlue
   m_TagString: Crystal
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8362513791317023280}
   - component: {fileID: 7684863179309066986}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -6,6 +6,10 @@ public class PirateFighter : EnemyShip
 {
     public float rotateSpeed;
 
+    public LayerMask mask;
+
+    public float range = 100f;
+
     private float nextTimeToFire = 0f;
 
     [Header("Shooting")]
@@ -39,7 +43,7 @@ public class PirateFighter : EnemyShip
 
         gunOrigin.Rotate(0f, 0f, rotateSpeed);
 
-        if (Physics.Raycast(rotateOrigin.position, rotateOrigin.forward, out _hit))
+        if (Physics.Raycast(rotateOrigin.position, rotateOrigin.forward, out _hit, range, mask))
         {
             Debug.Log("I hit" + _hit.transform.name);
         }

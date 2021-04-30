@@ -16,36 +16,42 @@ public class AstroidSpawner : MonoBehaviour
     private void Start()
     {
         lastPos = transform.position;
-
-        for (int i = 0; i < amount; i++)
-        {
-            Vector3 spawnLocations = Random.onUnitSphere * radius;
-
-            GameObject tempAst = Instantiate(astroid, transform.position + spawnLocations, Random.rotation);
-
-            astroids.Add(tempAst);
-        }
+        SpawnAstroid("Out");
     }
 
     private void Update()
     {
         if(Vector3.Distance(transform.position, lastPos) > distance)
         {
-            for (int i = 0; i < astroids.Count; i++)
+            SpawnAstroid("In");
+        }
+    }
+
+    private void SpawnAstroid(string scaling)
+    {
+        for (int i = 0; i < astroids.Count; i++)
+        {
+            Destroy(astroids[i], 60f);
+        }
+
+        lastPos = transform.position;
+
+        for (int i = 0; i < amount; i++)
+        {
+            Vector3 spawnLocations = Vector3.zero;
+
+            if(scaling == "In")
             {
-                Destroy(astroids[i]);
+                spawnLocations = Random.insideUnitSphere * radius;
+
+            }else if(scaling == "Out")
+            {
+                spawnLocations = Random.onUnitSphere * radius;
             }
 
-            lastPos = transform.position;
+            GameObject tempAst = Instantiate(astroid, transform.position + spawnLocations, Random.rotation);
 
-            for (int i = 0; i < amount; i++)
-            {
-                Vector3 spawnLocations = Random.onUnitSphere * radius;
-
-                GameObject tempAst = Instantiate(astroid, transform.position + spawnLocations, Random.rotation);
-
-                astroids.Add(tempAst);
-            }
+            astroids.Add(tempAst);
         }
     }
 }

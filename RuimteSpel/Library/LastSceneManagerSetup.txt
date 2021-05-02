@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Thomas/Scenes/Thomas Scene.unity
+- path: Assets/Jarno/Jarno.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -5,10 +5,18 @@ using UnityEngine;
 public class MovementController : MonoBehaviour
 {
 
-    public float forwardSpeed = 25f;
-    public float strafeSpeed = 7.5f;
+    public float maxForwardSpeed = 25f;
+    public float maxStrafeSpeed = 7.5f;
+    public float forwardEncrease = 2f;
+    public float strafeEncrease = 1f;
     public float hoverSpeed = 5f;
     public float idlespeed = 2f;
+
+    public float currentForwardSpeed = 0;
+    public float currentStrafeSpeed = 0;
+
+    public Vector2 minMaxForwardSpeed = new Vector2(-3,20);
+    public Vector2 minMaxStraveSpeed = new Vector2(-2,2);
 
     private float activeForwardSpeed;
     private float activeStrafeSpeed;
@@ -51,21 +59,35 @@ public class MovementController : MonoBehaviour
 
         transform.Rotate(-mouseDistance.y * lookRateSpeed * Time.deltaTime, mouseDistance.x * lookRateSpeed * Time.deltaTime, rollInput * rollSpeed * Time.deltaTime, Space.Self);
 
+        //foreward
+        currentForwardSpeed += Input.GetAxisRaw("Vertical") * forwardEncrease * Time.deltaTime;
+        if (currentForwardSpeed < minMaxForwardSpeed.x)
+            currentForwardSpeed = minMaxForwardSpeed.x;
+        if (currentForwardSpeed > minMaxForwardSpeed.y)
+            currentForwardSpeed = minMaxForwardSpeed.y;
+        //strave
+        currentStrafeSpeed += Input.GetAxisRaw("Horizontal") * strafeEncrease * Time.deltaTime;
+        if (currentStrafeSpeed < minMaxStraveSpeed.x)
+            currentStrafeSpeed = minMaxStraveSpeed.x;
+        if (currentStrafeSpeed > minMaxStraveSpeed.y)
+            currentStrafeSpeed = minMaxStraveSpeed.y;
 
-        if (Input.GetAxisRaw("Vertical") != 0)
-            activeForwardSpeed = Mathf.Lerp(activeForwardSpeed, Input.GetAxisRaw("Vertical") * forwardSpeed, forwardAcceleration * Time.deltaTime);
+
+        /*
+        currentForwardSpeed = Mathf.Lerp(currentForwardSpeed, Input.GetAxisRaw("Vertical") * maxForwardSpeed, forwardAcceleration * Time.deltaTime);
         else
-            activeForwardSpeed = Mathf.Lerp(activeForwardSpeed, idlespeed, forwardAcceleration * Time.deltaTime);
+            currentForwardSpeed = Mathf.Lerp(currentForwardSpeed, idlespeed, forwardAcceleration * Time.deltaTime);
 
-        activeStrafeSpeed = Mathf.Lerp(activeStrafeSpeed, Input.GetAxisRaw("Horizontal") * strafeSpeed, strafeAcceleration * Time.deltaTime);
+        currentStraceSpeed = Mathf.Lerp(currentStraceSpeed, Input.GetAxisRaw("Horizontal") * maxStrafeSpeed, strafeAcceleration * Time.deltaTime);
         //activeIdleSpeed = Mathf.Lerp(activeIdleSpeed, idlespeed, idleAcceleration * Time.deltaTime);
 
         
             
         activeHoverSpeed = Mathf.Lerp(activeHoverSpeed, Input.GetAxisRaw("Hover") * hoverSpeed, hoverAcceleration * Time.deltaTime);
+        */
 
-
-        transform.position += transform.forward * activeForwardSpeed * Time.deltaTime;
-        transform.position += (transform.right * activeStrafeSpeed * Time.deltaTime) + (transform.up * activeHoverSpeed * Time.deltaTime);
+        transform.position += transform.forward * currentForwardSpeed * Time.deltaTime;
+        transform.position += (transform.right * currentStrafeSpeed * Time.deltaTime) + (transform.up * activeHoverSpeed * Time.deltaTime);
     }
 }
+                                                                  

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PirateFighter : EnemyShip
 {
-    public float rotateSpeed;
-
     public LayerMask mask;
 
     public float range = 100f;

@@ -9,6 +9,7 @@ public class EnemyShip : MonoBehaviour
     public float thrustSpeed, shootRange;
     public Transform gunOrigin, rotateOrigin;
     public Transform playerTarget;
+    public float rotateSpeed;
 
     [Header("Health")]
     public float maxHealth;
@@ -30,13 +31,15 @@ public class EnemyShip : MonoBehaviour
     {
         if(playerTarget != null)
         {
-
             if (movement)
             {
                 // If there is a target rotate towards the target and fly towards it
-                rotateOrigin.transform.LookAt(playerTarget);
-                direction = playerTarget.position - transform.position;
-                transform.Translate(direction.normalized * thrustSpeed * Time.deltaTime, Space.World);
+                Vector3 direction = playerTarget.position - rotateOrigin.transform.position;
+                Quaternion lookRotation = Quaternion.LookRotation(direction);
+                Vector3 rotation = Quaternion.Lerp(rotateOrigin.rotation, lookRotation, Time.deltaTime * rotateSpeed).eulerAngles;
+                rotateOrigin.rotation = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
+
+                transform.Translate(direction.normalized * thrustSpeed * Time.deltaTime);
             }
         }
 

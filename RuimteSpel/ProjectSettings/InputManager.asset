@@ -11,8 +11,8 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: left
     positiveButton: right
-    altNegativeButton: a
-    altPositiveButton: d
+    altNegativeButton: 
+    altPositiveButton: 
     gravity: 3
     dead: 0.001
     sensitivity: 3
@@ -25,10 +25,10 @@ InputManager:
     m_Name: Roll
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: e
-    positiveButton: q
-    altNegativeButton: a
-    altPositiveButton: d
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: d
+    altPositiveButton: a
     gravity: 3
     dead: 0.001
     sensitivity: 3

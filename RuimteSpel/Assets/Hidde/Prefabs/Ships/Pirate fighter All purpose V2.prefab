@@ -237,18 +237,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: 1
-  thrustSpeed: 50
+  thrustSpeed: 10
   shootRange: 500
   gunOrigin: {fileID: 4324943551588870517}
   rotateOrigin: {fileID: 3712506955255167764}
   playerTarget: {fileID: 0}
+  rotateSpeed: 2
   maxHealth: 100
   rb: {fileID: 4558787097757616974}
   explosion: {fileID: 8473879462505808633, guid: a92f0a5a3a29ead4d8a756c2fe449f31,
     type: 3}
   initialExplosion: {fileID: 3624538832300168025, guid: 2f0f70041fb5ee049b8430e8230ff1bf,
     type: 3}
-  rotateSpeed: 20
   mask:
     serializedVersion: 2
     m_Bits: 55

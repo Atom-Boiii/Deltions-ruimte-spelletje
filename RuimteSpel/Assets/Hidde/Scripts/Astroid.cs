@@ -43,20 +43,20 @@ public class Astroid : MonoBehaviour
 
     private void Explode()
     {
+        //FindObjectOfType<AstroidSpawner>().SpawnAstroid();
+
         GameObject go = Instantiate(explosionEffect, transform.position, Quaternion.identity);
         Destroy(go, 5f);
         Destroy(gameObject);
 
         for (int i = 0; i < crystalAmount; i++)
         {
-            int random2 = Random.Range(6, 15);
+            int random2 = Random.Range(-5, 5);
 
             crystalPos = transform.position + new Vector3(random2, random2, random2);
 
             GameObject tempCrystal = crystals[Random.Range(0, crystals.Length)];
-            GameObject crystalTemp = Instantiate(tempCrystal, crystalPos, transform.rotation);
-
-            crystalTemp.GetComponent<CrystalScript>().OnSpawn(crystalTemp.transform.localScale);
+            Instantiate(tempCrystal, crystalPos, transform.rotation);
         }
     }
 }

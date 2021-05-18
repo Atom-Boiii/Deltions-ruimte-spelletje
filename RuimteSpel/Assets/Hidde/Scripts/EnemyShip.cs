@@ -34,10 +34,10 @@ public class EnemyShip : MonoBehaviour
             if (movement)
             {
                 // If there is a target rotate towards the target and fly towards it
-                Vector3 direction = playerTarget.position - rotateOrigin.transform.position;
+                Vector3 direction = playerTarget.position - transform.position;
                 Quaternion lookRotation = Quaternion.LookRotation(direction);
                 Vector3 rotation = Quaternion.Lerp(rotateOrigin.rotation, lookRotation, Time.deltaTime * rotateSpeed).eulerAngles;
-                rotateOrigin.rotation = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
+                rotateOrigin.transform.rotation = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
 
                 transform.Translate(direction.normalized * thrustSpeed * Time.deltaTime);
             }

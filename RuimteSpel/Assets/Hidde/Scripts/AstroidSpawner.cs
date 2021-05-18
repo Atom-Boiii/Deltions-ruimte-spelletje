@@ -4,54 +4,27 @@ using UnityEngine;
 
 public class AstroidSpawner : MonoBehaviour
 {
-    public GameObject astroid;
-    public float amount;
-    public float radius;
-    public float distance;
+    public GameObject astroidPrefab;
 
-    private Vector3 lastPos;
-
-    private List<GameObject> astroids = new List<GameObject>();
+    public float startAmount;
+    public float spawnRange;
 
     private void Start()
     {
-        lastPos = transform.position;
-        SpawnAstroid("Out");
-    }
-
-    private void Update()
-    {
-        if(Vector3.Distance(transform.position, lastPos) > distance)
+        for (int i = 0; i < startAmount; i++)
         {
-            SpawnAstroid("In");
+            SpawnAstroid();
         }
     }
 
-    private void SpawnAstroid(string scaling)
+    public void SpawnAstroid()
     {
-        for (int i = 0; i < astroids.Count; i++)
-        {
-            Destroy(astroids[i], 60f);
-        }
+        Vector3 position = transform.position + Random.insideUnitSphere * spawnRange;
 
-        lastPos = transform.position;
+        float x = Random.Range(0, 360);
+        float y = Random.Range(0, 360);
+        float z = Random.Range(0, 360);
 
-        for (int i = 0; i < amount; i++)
-        {
-            Vector3 spawnLocations = Vector3.zero;
-
-            if(scaling == "In")
-            {
-                spawnLocations = Random.insideUnitSphere * radius;
-
-            }else if(scaling == "Out")
-            {
-                spawnLocations = Random.onUnitSphere * radius;
-            }
-
-            GameObject tempAst = Instantiate(astroid, transform.position + spawnLocations, Random.rotation);
-
-            astroids.Add(tempAst);
-        }
+        Instantiate(astroidPrefab, position, Quaternion.Euler(x, y, z));
     }
 }

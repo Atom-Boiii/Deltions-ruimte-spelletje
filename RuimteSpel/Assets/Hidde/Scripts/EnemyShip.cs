@@ -51,7 +51,7 @@ public class EnemyShip : MonoBehaviour
         OnEndUpdate();
     }
 
-    private void TakeDamage(float damageAmount)
+    public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
 

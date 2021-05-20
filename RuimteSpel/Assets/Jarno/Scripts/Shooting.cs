@@ -8,7 +8,8 @@ public class Shooting : MonoBehaviour
         
    public float damage = 20;
    public float shootDistance = 50;
-   public Transform shootpoint;
+    public Transform shootPoint;
+    public Transform spherePoint;
    public LayerMask enemyLayer;
 
     public LineRenderer lr;
@@ -18,7 +19,8 @@ public class Shooting : MonoBehaviour
    
 
    
-   public float _SecondsBetweenShots = 0.5f;
+   public float secondsBetweenShots = 0.5f;
+    public float secondsBetweenMine = 0.5f;
 
 
     private float _Timer;
@@ -29,7 +31,7 @@ public class Shooting : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             _Timer += 1 * Time.deltaTime;
-             if (_Timer >= _SecondsBetweenShots)
+             if (_Timer >= secondsBetweenShots)
                {
                     Shoot();
                     _Timer = 0;
@@ -37,7 +39,13 @@ public class Shooting : MonoBehaviour
         }
         if (Input.GetMouseButton(1))
         {
-            Mine();
+            _Timer += 1 * Time.deltaTime;
+            if (_Timer >= secondsBetweenMine)
+            {
+                Mine();
+                _Timer = 0;
+            }
+            
         }
         else
         {
@@ -47,7 +55,7 @@ public class Shooting : MonoBehaviour
     void Shoot()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, shootpoint.TransformDirection(Vector3.forward), out hit, shootDistance, enemyLayer))
+        if (Physics.Raycast(transform.position, shootPoint.TransformDirection(Vector3.forward), out hit, shootDistance, enemyLayer))
         {
             hit.transform.GetComponent<EnemyShip>().TakeDamage(damage);
         }
@@ -57,7 +65,7 @@ public class Shooting : MonoBehaviour
     {
         RaycastHit hit;
         bool checkhit = false;
-        if (Physics.Raycast(transform.position, shootpoint.TransformDirection(Vector3.forward), out hit, mineDistance * 1000, mineralLayer))
+        if (Physics.Raycast(transform.position, shootPoint.TransformDirection(Vector3.forward), out hit, mineDistance * 1000, mineralLayer))
         {
             if (hit.transform.GetComponent<Astroid>() != null)
             {
@@ -65,7 +73,7 @@ public class Shooting : MonoBehaviour
             }
             lr.enabled = true;
             checkhit = true;
-            lr.SetPositions(new Vector3[] { shootpoint.position, hit.point });
+            lr.SetPositions(new Vector3[] { spherePoint.position, hit.point });
         }
         
         if(!checkhit)

@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
         if (_CurrentHealth <= 0)
         {
             _CurrentHealth = 0;
-            gameObject.SetActive(false);
+            // Kill players
         }
     }
 

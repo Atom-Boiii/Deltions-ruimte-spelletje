@@ -26,11 +26,6 @@ public class MovementController : MonoBehaviour
     private float activeHoverSpeed;
     private float activeIdleSpeed;
 
-    private float forwardAcceleration = 2.5f;
-    private float strafeAcceleration = 2f;
-    private float hoverAcceleration = 2f;
-    private float idleAcceleration = 2f;
-
     public float lookRateSpeed = 90f;
 
     private Vector2 lookInput, screenCenter, mouseDistance;

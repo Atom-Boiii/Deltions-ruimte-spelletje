@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class EnemyShip : MonoBehaviour
 {
-    [Header("Movement")]
-    public bool movement;
-    public float thrustSpeed, shootRange;
-    public Transform gunOrigin, rotateOrigin;
-    public Transform playerTarget;
-    public float rotateSpeed;
-
     [Header("Health")]
     public float maxHealth;
-    private float health, deathCooldown;
+    public float maxShield;
+    private float health, shield, deathCooldown;
     public Rigidbody rb;
     public GameObject explosion, initialExplosion;
 
@@ -23,37 +17,26 @@ public class EnemyShip : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         health = maxHealth;
-
-        OnStart();
+        shield = maxShield;
     }
 
     public void Update()
     {
-        if(playerTarget != null)
-        {
-            if (movement)
-            {
-                // If there is a target rotate towards the target and fly towards it
-                Vector3 direction = playerTarget.position - transform.position;
-                Quaternion lookRotation = Quaternion.LookRotation(direction);
-                Vector3 rotation = Quaternion.Lerp(rotateOrigin.rotation, lookRotation, Time.deltaTime * rotateSpeed).eulerAngles;
-                rotateOrigin.transform.rotation = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
-
-                transform.Translate(direction.normalized * thrustSpeed * Time.deltaTime);
-            }
-        }
-
         if (Input.GetKeyDown(KeyCode.K))
         {
             TakeDamage(9999f);
         }
-
-        OnEndUpdate();
     }
 
     public void TakeDamage(float damageAmount)
     {
-        health -= damageAmount;
+        if(shield <= 0)
+        {
+            health -= damageAmount * 2;
+        }else if(shield >= 1)
+        {
+            shield -= damageAmount;
+        }
 
         if(health <= 0f)
         {
@@ -63,8 +46,6 @@ public class EnemyShip : MonoBehaviour
 
     private void Die()
     {
-        movement = false;
-
         rb.isKinematic = false;
         rb.AddForce(transform.forward * 1000f);
         rb.AddTorque(new Vector3(50f, 50f, 50f));
@@ -88,12 +69,4 @@ public class EnemyShip : MonoBehaviour
         Destroy(go, 10f);
         Destroy(gameObject);
     }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(transform.position, shootRange);
-    }
-
-    public virtual void OnStart() { }
-    public virtual void OnEndUpdate() { }
 }

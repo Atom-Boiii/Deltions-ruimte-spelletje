@@ -7,6 +7,8 @@ public class Shooting : MonoBehaviour
     
         
    public float damage = 20;
+    public float miningDamage = 20;
+
    public float shootDistance = 50;
     public Transform shootPoint;
     public Transform spherePoint;
@@ -28,6 +30,8 @@ public class Shooting : MonoBehaviour
 
     void Update()
     {
+        lr.SetPosition(0, spherePoint.position);
+
         if (Input.GetMouseButton(0))
         {
             _Timer += 1 * Time.deltaTime;
@@ -69,11 +73,11 @@ public class Shooting : MonoBehaviour
         {
             if (hit.transform.GetComponent<Astroid>() != null)
             {
-                hit.transform.GetComponent<Astroid>().TakeDamage(damage);
+                hit.transform.GetComponent<Astroid>().TakeDamage(miningDamage);
             }
             lr.enabled = true;
             checkhit = true;
-            lr.SetPositions(new Vector3[] { spherePoint.position, hit.point });
+            lr.SetPosition(1, hit.point);
         }
         
         if(!checkhit)

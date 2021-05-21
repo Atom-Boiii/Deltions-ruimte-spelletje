@@ -43,7 +43,7 @@ public class Astroid : MonoBehaviour
 
     private void Explode()
     {
-        //FindObjectOfType<AstroidSpawner>().SpawnAstroid();
+        FindObjectOfType<AstroidSpawner>().SpawnAstroid();
 
         GameObject go = Instantiate(explosionEffect, transform.position, Quaternion.identity);
         Destroy(go, 5f);

@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class MovementController : MonoBehaviour
 {
+    public Slider speedSlider;
 
     public float maxForwardSpeed = 25f;
     public float maxStrafeSpeed = 7.5f;
@@ -47,6 +50,11 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(speedSlider != null)
+        {
+            speedSlider.value = currentForwardSpeed;
+        }
+
         lookInput.x = Input.mousePosition.x;
         lookInput.y = Input.mousePosition.y;
 

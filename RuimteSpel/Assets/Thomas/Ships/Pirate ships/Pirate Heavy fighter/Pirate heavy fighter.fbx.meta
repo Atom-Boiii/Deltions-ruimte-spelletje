@@ -3,7 +3,32 @@ guid: aad529cfcac7cbb48b96421277da1ef3
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main
+    second: {fileID: 2100000, guid: c1e9ed99924c6b3429446f66697587a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Missile  RB
+    second: {fileID: 2100000, guid: f9915b6cb01d0c0449f03ffd3dd45cb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Missile LB
+    second: {fileID: 2100000, guid: 74c7e317e7e2bec4badf667fac4dc345, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Missile LT
+    second: {fileID: 2100000, guid: 136aa8ace5e1ac141936a3e397ca45fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Missile RT
+    second: {fileID: 2100000, guid: 522139124fddac649a2c4323b01261ee, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

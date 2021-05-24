@@ -18,6 +18,8 @@ public class Interceptor : MonoBehaviour
     private bool canMove = true;
     private int evadePhase = 0;
 
+    
+
     private Vector3 dir;
     Quaternion lookRotation;
     Vector3 rotation;
@@ -45,8 +47,6 @@ public class Interceptor : MonoBehaviour
         {
             evadePhase = 0;
         }
-
-
 
         switch (evadePhase)
         {
@@ -86,8 +86,6 @@ public class Interceptor : MonoBehaviour
                 transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
                 break;
         }
-
-        
     }
 
     public void SetMovementState(bool state)

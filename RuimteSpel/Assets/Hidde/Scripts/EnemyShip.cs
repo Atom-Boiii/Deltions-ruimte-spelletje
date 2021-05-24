@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class EnemyShip : MonoBehaviour
 {
+    public bool rechargeShield;
+    public float shieldRechargeRate;
+
+    private bool isBeingHit;
+
     [Header("Health")]
     public float maxHealth;
     public float maxShield;
@@ -12,6 +17,10 @@ public class EnemyShip : MonoBehaviour
     public GameObject explosion, initialExplosion;
 
     private Vector3 direction;
+
+    private float rechargeTimer;
+
+    private bool hitBool;
 
     private void Start()
     {
@@ -26,10 +35,29 @@ public class EnemyShip : MonoBehaviour
         {
             TakeDamage(9999f);
         }
+
+        if (rechargeShield)
+        {
+            if (!isBeingHit)
+            {
+                if (Time.time >= rechargeTimer)
+                {
+                    rechargeTimer = Time.time + 1f / shieldRechargeRate;
+
+                    if (shield <= maxShield - 1)
+                    {
+                        hitBool = false;
+                        shield++;
+                    }
+                }
+            }
+        }
     }
 
     public void TakeDamage(float damageAmount)
     {
+        isBeingHit = true;
+
         if(shield <= 0)
         {
             health -= damageAmount * 2;
@@ -41,6 +69,11 @@ public class EnemyShip : MonoBehaviour
         if(health <= 0f)
         {
             Die();
+        }
+
+        if (!hitBool)
+        {
+            StartCoroutine(SetHitStatus());
         }
     }
 
@@ -68,5 +101,14 @@ public class EnemyShip : MonoBehaviour
 
         Destroy(go, 10f);
         Destroy(gameObject);
+    }
+
+    private IEnumerator SetHitStatus()
+    {
+        hitBool = true;
+
+        yield return new WaitForSeconds(1f);
+
+        isBeingHit = false;
     }
 }

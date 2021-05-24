@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 2076471976}
   - component: {fileID: 2076471977}
   - component: {fileID: 2076471978}
-  m_Layer: 0
+  - component: {fileID: 882717919}
+  m_Layer: 10
   m_Name: Interceptor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,14 +64,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  rotateOrigin: {fileID: 7852023335003413518}
+  rotateOrigin: {fileID: 1995839009893107867}
   forwardValue: 100
-  hitRange: 20
-  backwardEvadeRange: 100
-  rightEvadeRange: 150
-  forwardEvadeRange: 300
-  speed: 30
+  trackOffset: {x: 0, y: 10, z: 5}
+  hitRange: 30
+  backwardEvadeRange: 500
+  rightEvadeRange: 550
+  forwardEvadeRange: 800
+  speed: 50
   weaponDamage: 20
+  fireRate: 1
   rotationSpeed: 2
 --- !u!114 &2076471978
 MonoBehaviour:
@@ -84,13 +87,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1628f4af8327ee342bd2f5400e2dc427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rechargeShield: 1
+  shieldRechargeRate: 2
   maxHealth: 100
-  maxShield: 50
+  maxShield: 100
   rb: {fileID: 2076471976}
   explosion: {fileID: 8473879462505808633, guid: a92f0a5a3a29ead4d8a756c2fe449f31,
     type: 3}
   initialExplosion: {fileID: 3624538832300168025, guid: 2f0f70041fb5ee049b8430e8230ff1bf,
     type: 3}
+--- !u!65 &882717919
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734274762883415277}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.10000002, z: 0.14254363}
+  m_Center: {x: 1.1878221e-22, y: 1.8811077e-16, z: -0.021271756}
 --- !u!1 &3854903722004527239
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,7 +118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7852023335003413518}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RotatOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,14 +132,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3854903722004527239}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5874433927943888534}
   m_Father: {fileID: 1995839009893107867}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1001 &6200497869617920381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -199,10 +217,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3a15ca9165b859d43b68a65ce6759004,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d89c55f453521d54699498876f79c7f9, type: 2}
     - target: {fileID: 919132149155446097, guid: 3a15ca9165b859d43b68a65ce6759004,
         type: 3}
       propertyPath: m_Name
       value: Interceptor-Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3a15ca9165b859d43b68a65ce6759004,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a15ca9165b859d43b68a65ce6759004, type: 3}

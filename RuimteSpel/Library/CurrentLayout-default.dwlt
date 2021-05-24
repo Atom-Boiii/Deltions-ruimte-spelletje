@@ -67,8 +67,8 @@ MonoBehaviour:
     y: 630
     width: 308
     height: 317
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_MinSize: {x: 276, y: 292}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 121
+  controlID: 134
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 120
+  controlID: 133
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,8 +166,8 @@ MonoBehaviour:
     y: 0
     width: 308
     height: 630
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -192,8 +192,8 @@ MonoBehaviour:
     y: 0
     width: 396
     height: 573
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -248,7 +248,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &11
 MonoBehaviour:
@@ -362,8 +362,8 @@ MonoBehaviour:
     y: 0
     width: 1216
     height: 573
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -435,20 +435,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Jarno/Scripts
+    - Assets/Mathijs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Jarno/Scripts
+  - Assets/Mathijs
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Gebruiker\Desktop\unity\Deltions-ruimte-spelletje\RuimteSpel
+  m_LastProjectPath: D:\mvdni\Documents\GitHub\Deltions-ruimte-spelletje\RuimteSpel
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f03d0000
-    m_LastClickedID: 15856
-    m_ExpandedIDs: 00000000d23c0000d83d0000da3d000000ca9a3b
+    m_SelectedIDs: 16400000
+    m_LastClickedID: 16406
+    m_ExpandedIDs: 00000000064000001a40000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -476,7 +476,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d23c0000
+    m_ExpandedIDs: 0000000006400000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -601,7 +601,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 68fbffff6afbffff4a3c0000563c0000623c0000
+      m_ExpandedIDs: aeefffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -661,9 +661,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.30582428, y: 1.4642868, z: 0.13645935}
+    m_Target: {x: -103.89233, y: -58.75563, z: 56.815598}
     speed: 2
-    m_Value: {x: 0.30582428, y: 1.4642868, z: 0.13645935}
+    m_Value: {x: -103.89233, y: -58.75563, z: 56.815598}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -709,13 +709,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.2490691, y: 0.43870053, z: -0.12796168, w: -0.8539}
+    m_Target: {x: -0.20196079, y: 0.47041422, z: -0.11153892, w: -0.85175997}
     speed: 2
-    m_Value: {x: -0.24906749, y: 0.4386977, z: -0.12796086, w: -0.85389453}
+    m_Value: {x: -0.20179188, y: 0.47168812, z: -0.11184097, w: -0.85104764}
   m_Size:
-    m_Target: 10.818863
+    m_Target: 81.18962
     speed: 2
-    m_Value: 10.818863
+    m_Value: 77.69342
   m_Ortho:
     m_Target: 0
     speed: 2

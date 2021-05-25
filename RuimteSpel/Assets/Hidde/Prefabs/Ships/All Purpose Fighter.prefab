@@ -79,12 +79,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1628f4af8327ee342bd2f5400e2dc427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rechargeShield: 0
+  shieldRechargeRate: 0
   maxHealth: 100
+  maxShield: 0
   rb: {fileID: 2189063828785724235}
   explosion: {fileID: 8473879462505808633, guid: a92f0a5a3a29ead4d8a756c2fe449f31,
     type: 3}
   initialExplosion: {fileID: 3624538832300168025, guid: 2f0f70041fb5ee049b8430e8230ff1bf,
     type: 3}
+  damageMultiplier: 0
+  shieldDamageMultiplier: 0
 --- !u!54 &2189063828785724235
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,6 +132,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf4eecb9611376458fcd6d5bdd6e4e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  rotateOrigin: {fileID: 0}
+  speed: 0
+  weaponDamage: 0
+  rotationSpeed: 0
 --- !u!1 &6278676052473698780
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +195,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7472636376421958162, guid: 67e52fd85e0779e47ad3b34e73f02b23, type: 3}
+  - {fileID: 2100000, guid: 4ed31016019ff704f837ac2650e4f7b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -264,7 +274,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2781410738928257789, guid: 67e52fd85e0779e47ad3b34e73f02b23, type: 3}
+  - {fileID: 2100000, guid: 9686f2043ab165c40ac5ca44ececbb76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

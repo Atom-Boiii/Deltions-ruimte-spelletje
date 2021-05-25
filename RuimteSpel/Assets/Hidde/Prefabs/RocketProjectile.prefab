@@ -4709,7 +4709,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  - {fileID: 2100000, guid: aa97ce4670bef2a4ea36da479afcc588, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -4767,7 +4767,7 @@ GameObject:
   - component: {fileID: 65006400107167935}
   - component: {fileID: 4863483154667503594}
   - component: {fileID: 8812204752858876998}
-  - component: {fileID: 468072441}
+  - component: {fileID: 4632900511875525975}
   m_Layer: 0
   m_Name: RocketProjectile
   m_TagString: Untagged
@@ -4856,7 +4856,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  - {fileID: 2100000, guid: aa97ce4670bef2a4ea36da479afcc588, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -9559,7 +9559,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &468072441
+--- !u!114 &4632900511875525975
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9568,11 +9568,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3927239340686511879}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f35098a12ffc392499ec7b694a84a2ce, type: 3}
+  m_Script: {fileID: 11500000, guid: e3e493d3d6712fe4381480157a20c3c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  explosionDamage: 0
-  explosionTimer: 10
-  explosionRange: 0
-  explosionTriggerRadius: 0
+  speed: 25
+  triggerDistance: 5
+  explosionEffect: {fileID: 8473879462505808633, guid: a92f0a5a3a29ead4d8a756c2fe449f31,
+    type: 3}

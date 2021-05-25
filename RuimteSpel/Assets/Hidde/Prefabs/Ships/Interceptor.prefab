@@ -96,6 +96,8 @@ MonoBehaviour:
     type: 3}
   initialExplosion: {fileID: 3624538832300168025, guid: 2f0f70041fb5ee049b8430e8230ff1bf,
     type: 3}
+  damageMultiplier: 2
+  shieldDamageMultiplier: 2
 --- !u!65 &882717919
 BoxCollider:
   m_ObjectHideFlags: 0

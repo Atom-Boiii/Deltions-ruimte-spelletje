@@ -5,12 +5,16 @@ using TMPro;
 
 public class UpgradeSystem : MonoBehaviour
 {
+    public Upgrade[] upgrades;
+
     public int cash = 0;
 
     private int pageIndex = 1;
 
     public TMP_Text pageIndexIndicator;
     public TMP_Text moneyCounter;
+    public TMP_Text infoText;
+    public TMP_Text costText;
 
     public GameObject upgradeMainPanel;
     public GameObject upgradePanel1;
@@ -18,10 +22,17 @@ public class UpgradeSystem : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = true;
+
         //cash = PlayerPrefs.GetInt("Money");
 
         upgradePanel1.SetActive(true);
         upgradePanel2.SetActive(false);
+
+        for (int i = 0; i < upgrades.Length; i++)
+        {
+            upgrades[i].UpdateUpgrade();
+        }
     }
 
     private void Update()
@@ -57,6 +68,35 @@ public class UpgradeSystem : MonoBehaviour
             upgradePanel1.SetActive(true);
             upgradePanel2.SetActive(false);
             pageIndex--;
+
+            for (int i = 0; i < upgrades.Length; i++)
+            {
+                upgrades[i].UpdateUpgrade();
+            }
         }
+    }
+
+    private int currentUpgrade = 0;
+    
+    public void PurchaseUpgrade()
+    {
+        if(cash >= upgrades[currentUpgrade].cost)
+        {
+            upgrades[currentUpgrade].isPurchased = 1;
+            upgrades[currentUpgrade].UpdateUpgrade();
+        }
+        else
+        {
+            Debug.Log("Not enough cash");
+        }
+    }
+
+    public void SetUpgrade(int upgradeIndex)
+    {
+        currentUpgrade = upgradeIndex;
+
+        infoText.text = upgrades[upgradeIndex].info;
+        costText.text = "Price: $" + upgrades[upgradeIndex].cost.ToString();
+        upgrades[upgradeIndex].isPurchased = 1;
     }
 }

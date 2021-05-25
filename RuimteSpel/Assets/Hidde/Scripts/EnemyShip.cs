@@ -15,6 +15,7 @@ public class EnemyShip : MonoBehaviour
     private float health, shield, deathCooldown;
     public Rigidbody rb;
     public GameObject explosion, initialExplosion;
+    public float damageMultiplier, shieldDamageMultiplier;
 
     private Vector3 direction;
 
@@ -60,10 +61,10 @@ public class EnemyShip : MonoBehaviour
 
         if(shield <= 0)
         {
-            health -= damageAmount * 2;
+            health -= damageAmount * damageMultiplier;
         }else if(shield >= 1)
         {
-            shield -= damageAmount;
+            shield -= damageAmount * shieldDamageMultiplier;
         }
 
         if(health <= 0f)

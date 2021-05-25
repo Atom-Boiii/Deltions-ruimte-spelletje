@@ -15,6 +15,8 @@ public class MovementController : MonoBehaviour
     public float hoverSpeed = 5f;
     public float idlespeed = 2f;
 
+    public Transform directionIndicator;
+
     public float currentForwardSpeed = 0;
     public float currentStrafeSpeed = 0;
 
@@ -36,15 +38,23 @@ public class MovementController : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.None;
+
         screenCenter.x = Screen.width * .5f;
         screenCenter.y = Screen.height * .5f;
 
         Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Vector2 mousePos = Input.mousePosition;
+
+        directionIndicator.position = mousePos;
+
         if(speedSlider != null)
         {
             speedSlider.value = currentForwardSpeed;

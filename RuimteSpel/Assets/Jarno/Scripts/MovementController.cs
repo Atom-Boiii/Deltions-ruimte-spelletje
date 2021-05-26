@@ -38,6 +38,8 @@ public class MovementController : MonoBehaviour
 
     void Start()
     {
+        minMaxForwardSpeed.y = PlayerPrefs.GetFloat("MaxSpeed");
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.lockState = CursorLockMode.None;
 

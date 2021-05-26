@@ -27,6 +27,11 @@ public class Shooting : MonoBehaviour
 
     private float _Timer;
 
+    private void Start()
+    {
+        secondsBetweenMine = PlayerPrefs.GetFloat("MiningRate");
+        miningDamage = PlayerPrefs.GetFloat("MiningDamage");
+    }
 
     void Update()
     {

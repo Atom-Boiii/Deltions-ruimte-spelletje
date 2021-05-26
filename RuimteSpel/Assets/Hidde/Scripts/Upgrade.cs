@@ -9,7 +9,8 @@ public class Upgrade
     public string upgradeCategory;
     public Button levelButton;
     public int isPurchased = 0;
-    public int cost;
+    public int cost, level;
+    public UpgradeItem upgradeType;
 
     [TextArea]
     public string info;
@@ -35,6 +36,11 @@ public class Upgrade
 
             levelButton.colors = colors;
         }
+    }
+
+    public void PickUpgrade()
+    {
+
     }
     
 }

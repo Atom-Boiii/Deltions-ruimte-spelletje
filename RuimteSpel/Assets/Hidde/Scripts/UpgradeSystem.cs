@@ -84,6 +84,9 @@ public class UpgradeSystem : MonoBehaviour
         {
             upgrades[currentUpgrade].isPurchased = 1;
             upgrades[currentUpgrade].UpdateUpgrade();
+            upgrades[currentUpgrade].upgradeType.level = upgrades[currentUpgrade].level;
+            upgrades[currentUpgrade].upgradeType.OnUpgrade();
+
         }
         else
         {

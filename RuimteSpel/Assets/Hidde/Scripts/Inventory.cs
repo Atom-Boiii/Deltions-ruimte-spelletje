@@ -12,13 +12,13 @@ public class Inventory : MonoBehaviour
 
     public int inventoryAmount;
 
-    public int maxSize;
+    public float maxSize;
 
     public TMP_Text greenCrystalText;
 
     private void Start()
     {
-        // TODO Set max size to the upgrade size threshold, preferably through playerprefs
+        maxSize = PlayerPrefs.GetFloat("StorageSpace");
     }
 
     private void Update()

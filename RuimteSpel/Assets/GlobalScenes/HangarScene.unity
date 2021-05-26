@@ -10295,7 +10295,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.5330188, g: 0.7525215, b: 1, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -10566,7 +10566,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 967404570}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2052346306}
+        m_MethodName: SetUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 11
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &967404570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11799,7 +11810,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1122626083}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2052346306}
+        m_MethodName: SetUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1122626083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19783,7 +19805,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.09066844, g: 1, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -19805,7 +19827,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1761928651}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2052346306}
+        m_MethodName: SetUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1761928651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19819,7 +19852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.065570354, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -22278,7 +22311,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.09066844, g: 1, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -23866,42 +23899,86 @@ MonoBehaviour:
     levelButton: {fileID: 1973831072}
     isPurchased: 1
     cost: 0
-    info: Fly up to a thrust of 25 kmp/h
+    level: 0
+    upgradeType: {fileID: 11400000, guid: 36e13a466f250b240b5d59009aa49f61, type: 2}
+    info: Fly up to a thrust of 25 kmp/h.
   - upgradeCategory: Thrust 2
     levelButton: {fileID: 939731163}
     isPurchased: 0
     cost: 100
-    info: Fly up to a thrust of 50 kmp/h
+    level: 1
+    upgradeType: {fileID: 11400000, guid: 99c289f4af67a4b47aaa70b329930518, type: 2}
+    info: Fly up to a thrust of 50 kmp/h.
   - upgradeCategory: Thrust 3
     levelButton: {fileID: 1239272468}
     isPurchased: 0
     cost: 200
-    info: Fly up to a thrust of 75 kmp/h
+    level: 2
+    upgradeType: {fileID: 11400000, guid: cbe9bf312ac851144bc5e1b50e276d00, type: 2}
+    info: Fly up to a thrust of 75 kmp/h.
   - upgradeCategory: Thrust 4
     levelButton: {fileID: 1851239497}
     isPurchased: 0
     cost: 300
-    info: Fly up to a thrust of 100 kmp/h
+    level: 3
+    upgradeType: {fileID: 11400000, guid: 1223fb30c2b423940978f82558f2fbd9, type: 2}
+    info: Fly up to a thrust of 100 kmp/h.
   - upgradeCategory: Mining 1
     levelButton: {fileID: 2004390226}
     isPurchased: 1
     cost: 0
+    level: 0
+    upgradeType: {fileID: 11400000, guid: d4026bb633845364fb764fdaa56285ad, type: 2}
     info: Basic mining tools to destroy astroids.
   - upgradeCategory: Mining 2
     levelButton: {fileID: 2015099945}
     isPurchased: 0
     cost: 100
+    level: 1
+    upgradeType: {fileID: 11400000, guid: 216c19a19c534784e9993be26cf8a040, type: 2}
     info: Faster mining posibility and more storage space.
   - upgradeCategory: Mining 3
     levelButton: {fileID: 1243533823}
     isPurchased: 0
     cost: 200
+    level: 2
+    upgradeType: {fileID: 11400000, guid: 460cd6f6c0873e24dbdcb632cc915e5d, type: 2}
     info: Greatly increased storage space.
   - upgradeCategory: Mining 4
     levelButton: {fileID: 152658792}
     isPurchased: 0
     cost: 300
-    info: Much faster mining speed and even more storage space.
+    level: 3
+    upgradeType: {fileID: 11400000, guid: e5693326c838512409917c7c5be00201, type: 2}
+    info: Much faster mining speed.
+  - upgradeCategory: Shooting 1
+    levelButton: {fileID: 1761928650}
+    isPurchased: 1
+    cost: 0
+    level: 0
+    upgradeType: {fileID: 0}
+    info: Increase the rate the guns fire with.
+  - upgradeCategory: Shooting 2
+    levelButton: {fileID: 2132354748}
+    isPurchased: 0
+    cost: 100
+    level: 0
+    upgradeType: {fileID: 0}
+    info: Increases the range and the damage of the guns.
+  - upgradeCategory: Shooting 3
+    levelButton: {fileID: 1122626082}
+    isPurchased: 0
+    cost: 200
+    level: 0
+    upgradeType: {fileID: 0}
+    info: Increases the rate of fire and weapons heat up less faster.
+  - upgradeCategory: Shooting 4
+    levelButton: {fileID: 967404569}
+    isPurchased: 0
+    cost: 300
+    level: 0
+    upgradeType: {fileID: 0}
+    info: Increases damage and range of the weapon.
   cash: 10000
   pageIndexIndicator: {fileID: 397596073}
   moneyCounter: {fileID: 1258292693}
@@ -25212,7 +25289,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.09066844, g: 1, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -25234,7 +25311,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2132354749}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2052346306}
+        m_MethodName: SetUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2132354749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25248,7 +25336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.065570354, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

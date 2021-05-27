@@ -24,19 +24,23 @@ public class UpgradeSystem : MonoBehaviour
     {
         Cursor.visible = true;
 
-        //cash = PlayerPrefs.GetInt("Money");
+        cash = PlayerPrefs.GetInt("Money");
 
         upgradePanel1.SetActive(true);
         upgradePanel2.SetActive(false);
 
         for (int i = 0; i < upgrades.Length; i++)
         {
+            upgrades[i].OnStart();
+            upgrades[i].isPurchased = PlayerPrefs.GetInt(upgrades[i].upgradeCategory);
+
             upgrades[i].UpdateUpgrade();
         }
     }
 
     private void Update()
     {
+        cash = PlayerPrefs.GetInt("Money");
         pageIndexIndicator.text = "(" + pageIndex + "/" + "2)";
         moneyCounter.text = "$" + cash;
     }
@@ -82,11 +86,15 @@ public class UpgradeSystem : MonoBehaviour
     {
         if(cash >= upgrades[currentUpgrade].cost)
         {
+            cash -= upgrades[currentUpgrade].cost;
             upgrades[currentUpgrade].isPurchased = 1;
             upgrades[currentUpgrade].UpdateUpgrade();
             upgrades[currentUpgrade].upgradeType.level = upgrades[currentUpgrade].level;
             upgrades[currentUpgrade].upgradeType.OnUpgrade();
+            upgrades[currentUpgrade].OnUnlock();
+            upgrades[currentUpgrade].isPurchased = 1;
 
+            PlayerPrefs.SetInt(upgrades[currentUpgrade].upgradeCategory, upgrades[currentUpgrade].isPurchased);
         }
         else
         {
@@ -100,6 +108,6 @@ public class UpgradeSystem : MonoBehaviour
 
         infoText.text = upgrades[upgradeIndex].info;
         costText.text = "Price: $" + upgrades[upgradeIndex].cost.ToString();
-        upgrades[upgradeIndex].isPurchased = 1;
+        
     }
 }

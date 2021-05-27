@@ -31,6 +31,10 @@ public class Shooting : MonoBehaviour
     {
         secondsBetweenMine = PlayerPrefs.GetFloat("MiningRate");
         miningDamage = PlayerPrefs.GetFloat("MiningDamage");
+
+        damage = PlayerPrefs.GetFloat("ShootDamage");
+        secondsBetweenShots = PlayerPrefs.GetFloat("ShootRate");
+        shootDistance = PlayerPrefs.GetFloat("ShootDistance");
     }
 
     void Update()
@@ -74,7 +78,7 @@ public class Shooting : MonoBehaviour
     {
         RaycastHit hit;
         bool checkhit = false;
-        if (Physics.Raycast(transform.position, shootPoint.TransformDirection(Vector3.forward), out hit, mineDistance * 1000, mineralLayer))
+        if (Physics.Raycast(transform.position, shootPoint.forward, out hit, mineDistance * 1000, mineralLayer))
         {
             if (hit.transform.GetComponent<Astroid>() != null)
             {

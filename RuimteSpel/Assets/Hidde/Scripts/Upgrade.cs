@@ -12,8 +12,21 @@ public class Upgrade
     public int cost, level;
     public UpgradeItem upgradeType;
 
+    public Button nextUpgradeButton;
+
     [TextArea]
     public string info;
+
+    public void OnStart()
+    {
+        if (isPurchased == 0)
+        {
+            if(nextUpgradeButton != null)
+            {
+                nextUpgradeButton.interactable = false;
+            }
+        }
+    }
 
     public void UpdateUpgrade()
     {
@@ -28,7 +41,7 @@ public class Upgrade
         }
         else if(isPurchased == 0)
         {
-            levelButton.interactable = true;
+            //levelButton.interactable = true;
 
             ColorBlock colors = levelButton.colors;
 
@@ -41,6 +54,14 @@ public class Upgrade
     public void PickUpgrade()
     {
 
+    }
+
+    public void OnUnlock()
+    {
+        if (nextUpgradeButton != null)
+        {
+            nextUpgradeButton.interactable = true;
+        }
     }
     
 }

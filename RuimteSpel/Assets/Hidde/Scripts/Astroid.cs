@@ -21,14 +21,6 @@ public class Astroid : MonoBehaviour
         health = maxHealth;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            TakeDamage(999f);
-        }
-    }
-
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
@@ -55,8 +47,10 @@ public class Astroid : MonoBehaviour
 
             crystalPos = transform.position + new Vector3(random2, random2, random2);
 
+            Vector3 rotation = new Vector3(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
+
             GameObject tempCrystal = crystals[Random.Range(0, crystals.Length)];
-            Instantiate(tempCrystal, crystalPos, transform.rotation);
+            Instantiate(tempCrystal, crystalPos, Quaternion.Euler(rotation));
         }
     }
 }

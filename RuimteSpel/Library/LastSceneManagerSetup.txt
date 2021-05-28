@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/GlobalScenes/Level 1.unity
+- path: Assets/GlobalScenes/HangarScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

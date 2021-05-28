@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1995839009893107867}
   - component: {fileID: 2076471976}
-  - component: {fileID: 2076471977}
   - component: {fileID: 2076471978}
   - component: {fileID: 882717919}
+  - component: {fileID: -6682157871450606609}
   m_Layer: 10
   m_Name: Interceptor
   m_TagString: Untagged
@@ -51,30 +51,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2076471977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 734274762883415277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f423e54c5ed6e31488ceb9989e25e1e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  rotateOrigin: {fileID: 1995839009893107867}
-  forwardValue: 100
-  trackOffset: {x: 0, y: 10, z: 5}
-  hitRange: 30
-  backwardEvadeRange: 500
-  rightEvadeRange: 550
-  forwardEvadeRange: 800
-  speed: 50
-  weaponDamage: 20
-  fireRate: 1
-  rotationSpeed: 2
 --- !u!114 &2076471978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +87,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.10000002, z: 0.14254363}
   m_Center: {x: 1.1878221e-22, y: 1.8811077e-16, z: -0.021271756}
+--- !u!114 &-6682157871450606609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734274762883415277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf4eecb9611376458fcd6d5bdd6e4e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  rotateOrigin: {fileID: 0}
+  speed: 0
+  weaponDamage: 0
+  rotationSpeed: 0
 --- !u!1 &3854903722004527239
 GameObject:
   m_ObjectHideFlags: 0

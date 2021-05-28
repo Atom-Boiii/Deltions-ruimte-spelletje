@@ -19,11 +19,20 @@ public class Upgrade
 
     public void OnStart()
     {
+        isPurchased = PlayerPrefs.GetInt(upgradeCategory);
+
         if (isPurchased == 0)
         {
             if(nextUpgradeButton != null)
             {
                 nextUpgradeButton.interactable = false;
+            }
+        }
+        else if(isPurchased == 1)
+        {
+            if (nextUpgradeButton != null)
+            {
+                nextUpgradeButton.interactable = true;
             }
         }
     }

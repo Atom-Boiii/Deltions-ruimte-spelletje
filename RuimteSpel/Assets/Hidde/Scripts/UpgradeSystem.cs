@@ -40,7 +40,8 @@ public class UpgradeSystem : MonoBehaviour
 
     private void Update()
     {
-        cash = PlayerPrefs.GetInt("Money");
+        Cursor.lockState = CursorLockMode.Confined;
+
         pageIndexIndicator.text = "(" + pageIndex + "/" + "2)";
         moneyCounter.text = "$" + cash;
     }
@@ -87,6 +88,8 @@ public class UpgradeSystem : MonoBehaviour
         if(cash >= upgrades[currentUpgrade].cost)
         {
             cash -= upgrades[currentUpgrade].cost;
+            PlayerPrefs.SetInt("Money", cash);
+
             upgrades[currentUpgrade].isPurchased = 1;
             upgrades[currentUpgrade].UpdateUpgrade();
             upgrades[currentUpgrade].upgradeType.level = upgrades[currentUpgrade].level;

@@ -46,13 +46,13 @@ public class MovementController : MonoBehaviour
         screenCenter.x = Screen.width * .5f;
         screenCenter.y = Screen.height * .5f;
 
-        Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Cursor.lockState = CursorLockMode.Confined;
         Vector2 mousePos = Input.mousePosition;
 
         directionIndicator.position = mousePos;

@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 5562281208557016961}
   - component: {fileID: 2189063828785724235}
   - component: {fileID: 365408767446179178}
-  - component: {fileID: 1814242510987554586}
+  - component: {fileID: 3476419546202321047}
   m_Layer: 10
   m_Name: All Purpose Fighter
   m_TagString: Untagged
@@ -120,7 +120,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2906205670695350515, guid: 99b89bce5da3399468cb8859c6250add, type: 3}
---- !u!114 &1814242510987554586
+--- !u!114 &3476419546202321047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,14 +129,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1986285087523316762}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf4eecb9611376458fcd6d5bdd6e4e5, type: 3}
+  m_Script: {fileID: 11500000, guid: f423e54c5ed6e31488ceb9989e25e1e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  rotateOrigin: {fileID: 0}
-  speed: 0
-  weaponDamage: 0
-  rotationSpeed: 0
+  rotateOrigin: {fileID: 1995839009893107867, guid: 19a649f34ec3bad4ea15e2ec6bf50bf8,
+    type: 3}
+  forwardValue: 100
+  trackOffset: {x: 0, y: 10, z: 5}
+  hitRange: 30
+  backwardEvadeRange: 500
+  rightEvadeRange: 550
+  forwardEvadeRange: 800
+  speed: 50
+  weaponDamage: 20
+  fireRate: 1
+  rotationSpeed: 2
 --- !u!1 &6278676052473698780
 GameObject:
   m_ObjectHideFlags: 0

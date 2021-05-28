@@ -4,29 +4,38 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private float _MaxHealth = 100;
+    public float maxHealth = 100;
 
+    public GameObject Camera;
 
-    private float _CurrentHealth;
+    private float currentHealth;
 
     private void OnEnable()
-    {  
-        _CurrentHealth = _MaxHealth;
+    {
+        currentHealth = maxHealth;
     }
 
     public void DoDamage(float damageamount)
     {
-        _CurrentHealth -= damageamount;
-        if (_CurrentHealth <= 0)
+        currentHealth -= damageamount;
+        if (currentHealth <= 0)
         {
-            _CurrentHealth = 0;
-            // Kill players
+            currentHealth = 0;
+
+            StartCoroutine(Death());
         }
+    }
+
+    public IEnumerator Death()
+    {
+        Camera.transform.parent = null;
+        yield return new WaitForSeconds(5);
+        //  DeathScreen.SetActive(true);
     }
 
     public float GetCurrentHealth()
     {
-        return _CurrentHealth;
+        return currentHealth;
     }
     public float GetMaxHealth()
     {

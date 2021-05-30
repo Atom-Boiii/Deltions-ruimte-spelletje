@@ -523,6 +523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 831421803}
+  - component: {fileID: 831421804}
   m_Layer: 0
   m_Name: WaveSystem
   m_TagString: Untagged
@@ -543,6 +544,89 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &831421804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831421802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 553c8bb8c955ad9498090773fee6aeb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Option: 1
+  Seed: 0
+  SetRandomSeed: 1
+  ObjectPool: {fileID: 0}
+  Enemies:
+  - EnemyName: 
+    EnemyPrefab: {fileID: 0}
+    StartWave: 0
+  - EnemyName: 
+    EnemyPrefab: {fileID: 0}
+    StartWave: 0
+  - EnemyName: 
+    EnemyPrefab: {fileID: 0}
+    StartWave: 0
+  SpawnLocations: []
+  SpawnRate: 5
+  SpawnRateEncrease: 0.05
+  RandomEnemy: 1
+  RandomSpawn: 1
+  Waves:
+    WaveOption: 0
+    EnemyIncreaseAmount: 0
+    Waves: []
+    WaveAmount: 0
+    EnemyAmount: 0
+    TimeBetweenWaves: 0
+  WaitForAllEnemiesKilled: 1
+--- !u!1 &860043334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 860043336}
+  - component: {fileID: 860043335}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &860043335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860043334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba7047a846d28444be929113020f9a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectPools: []
+--- !u!4 &860043336
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860043334}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0000076293945, y: -0.71557117, z: 287.78955}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &914771913 stripped
 Transform:
@@ -671,17 +755,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1628f4af8327ee342bd2f5400e2dc427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: 0
-  thrustSpeed: 0
-  shootRange: 0
-  gunOrigin: {fileID: 0}
-  rotateOrigin: {fileID: 0}
-  playerTarget: {fileID: 0}
-  rotateSpeed: 0
+  rechargeShield: 0
+  shieldRechargeRate: 0
   maxHealth: 2
+  maxShield: 0
   rb: {fileID: 0}
   explosion: {fileID: 0}
   initialExplosion: {fileID: 0}
+  damageMultiplier: 0
+  shieldDamageMultiplier: 0
 --- !u!1 &1414771810
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,17 +971,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1628f4af8327ee342bd2f5400e2dc427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: 0
-  thrustSpeed: 0
-  shootRange: 0
-  gunOrigin: {fileID: 0}
-  rotateOrigin: {fileID: 0}
-  playerTarget: {fileID: 0}
-  rotateSpeed: 0
+  rechargeShield: 0
+  shieldRechargeRate: 0
   maxHealth: 0
+  maxShield: 0
   rb: {fileID: 0}
   explosion: {fileID: 0}
   initialExplosion: {fileID: 0}
+  damageMultiplier: 0
+  shieldDamageMultiplier: 0
 --- !u!114 &1531173160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1363,12 +1443,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe46a89b4c15cc4183cd8c4cbb8b98d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedSlider: {fileID: 0}
   maxForwardSpeed: 25
   maxStrafeSpeed: 7.5
   forwardEncrease: 10
   strafeEncrease: 2
   hoverSpeed: 5
   idlespeed: 2
+  directionIndicator: {fileID: 0}
   currentForwardSpeed: 0
   currentStrafeSpeed: 0
   minMaxForwardSpeed: {x: -30, y: 100}
@@ -1405,6 +1487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+  miningDamage: 20
   shootDistance: 50
   shootPoint: {fileID: 1936571499}
   spherePoint: {fileID: 643011313}

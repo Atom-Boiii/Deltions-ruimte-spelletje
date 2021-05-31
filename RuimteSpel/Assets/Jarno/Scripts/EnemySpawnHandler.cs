@@ -17,14 +17,10 @@ public class EnemySpawnHandler : MonoBehaviour
     [Header("Enemies")]
     public EnemySpawnHandler_Enemy[] Enemies = null;
 
-    [Header("SpawnLocations")]
-    public Transform[] SpawnLocations = null;
-
     [Header("Settings - Endless")]
     public float SpawnRate = 5; // Seconds between spawning
     public float SpawnRateEncrease = 0.05f; // Decrease time between spawning per sec
     public bool RandomEnemy = true;
-    public bool RandomSpawn = true;
 
     [Header("Settings - Waves")]
     public EnemySpawnHandler_WaveSettings Waves = null;
@@ -37,6 +33,8 @@ public class EnemySpawnHandler : MonoBehaviour
     private float SpawnSpeed = 0;
 
     private int _EnemiesAlive = 0;
+
+    public float spawnRange;
 
     private void Start()
     {
@@ -78,12 +76,9 @@ public class EnemySpawnHandler : MonoBehaviour
         if (Timer >= SpawnRate)
         {
             int randomenemyid = 0;
-            int randomspawnid = 0;
             if (RandomEnemy)
                 randomenemyid = Random.Range(0, Enemies.Length);
-            if (RandomSpawn)
-                randomspawnid = Random.Range(0, SpawnLocations.Length);
-            Spawn(randomenemyid, randomspawnid);
+            Spawn(randomenemyid);
             Timer = 0;
         }
         SpawnRate -= SpawnRateEncrease * Time.deltaTime;
@@ -126,7 +121,7 @@ public class EnemySpawnHandler : MonoBehaviour
                             int spawnid = Random.Range(0, Enemies.Length);
                             if (Waves.Waves[CurrentWave].EnemyID[spawnid] > 0)
                             {
-                                Spawn(spawnid, Random.Range(0, SpawnLocations.Length));
+                                Spawn(spawnid);
                                 Waves.Waves[CheckWave].EnemyID[spawnid]--;
                                 Waves.Waves[CurrentWave].TotalEnemies--;
                                 spawncheck = true;
@@ -192,10 +187,11 @@ public class EnemySpawnHandler : MonoBehaviour
         }
     }
 
-    public void Spawn(int enemyid, int spawnid)
+    public void Spawn(int enemyid)
     {
         GameObject obj = ObjectPool.GetObjectPrefabName(Enemies[enemyid].EnemyPrefab.name, false);
-        obj.transform.position = SpawnLocations[spawnid].position;
+    //    obj.transform.position = SpawnLocations[spawnid].position;
+      obj.transform.position = transform.position + Random.insideUnitSphere * spawnRange;
         obj.SetActive(true);
     }
     private void EnemiesAlive()

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -560,30 +560,22 @@ MonoBehaviour:
   Option: 1
   Seed: 0
   SetRandomSeed: 1
-  ObjectPool: {fileID: 0}
-  Enemies:
-  - EnemyName: 
-    EnemyPrefab: {fileID: 0}
-    StartWave: 0
-  - EnemyName: 
-    EnemyPrefab: {fileID: 0}
-    StartWave: 0
-  - EnemyName: 
-    EnemyPrefab: {fileID: 0}
-    StartWave: 0
+  ObjectPool: {fileID: 860043335}
+  Enemies: []
   SpawnLocations: []
   SpawnRate: 5
   SpawnRateEncrease: 0.05
   RandomEnemy: 1
   RandomSpawn: 1
   Waves:
-    WaveOption: 0
+    WaveOption: 1
     EnemyIncreaseAmount: 0
     Waves: []
-    WaveAmount: 0
+    WaveAmount: 3
     EnemyAmount: 0
     TimeBetweenWaves: 0
   WaitForAllEnemiesKilled: 1
+  spawnRange: 0
 --- !u!1 &860043334
 GameObject:
   m_ObjectHideFlags: 0

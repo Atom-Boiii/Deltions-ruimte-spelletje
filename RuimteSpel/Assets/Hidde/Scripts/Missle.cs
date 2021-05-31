@@ -7,6 +7,8 @@ public class Missle : MonoBehaviour
     public float speed;
     public float triggerDistance;
 
+    public float damageAmount;
+
     public GameObject explosionEffect;
 
     private void Start()
@@ -20,14 +22,19 @@ public class Missle : MonoBehaviour
 
         if(Vector3.Distance(transform.position, GameObject.Find("PlayerShip").transform.position) <= triggerDistance)
         {
-            ExplodeMissle();
+            ExplodeMissle(true);
         }
     }
 
-    public void ExplodeMissle()
+    public void ExplodeMissle(bool damage)
     {
         GameObject tempMissle = Instantiate(explosionEffect, transform.position, Quaternion.identity);
         Destroy(tempMissle, 5);
+
+        if (damage)
+        {
+            FindObjectOfType<Health>().DoDamage(damageAmount);
+        }
 
         Destroy(gameObject);
     }
@@ -36,6 +43,6 @@ public class Missle : MonoBehaviour
     {
         yield return new WaitForSeconds(10f);
 
-        ExplodeMissle();
+        ExplodeMissle(false);
     }
 }

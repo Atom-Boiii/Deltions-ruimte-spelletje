@@ -9,10 +9,18 @@ public class SpaceStationEntrance : MonoBehaviour
 
     public void LeaveHangar()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            SceneManager.LoadScene(1);
+        }
+    }
+
+    public void ReturnToMenu()
     {
         SceneManager.LoadScene(0);
     }

@@ -43,11 +43,11 @@ GameObject:
   - component: {fileID: 5221314242612923989}
   - component: {fileID: 5562281208557016961}
   - component: {fileID: 2189063828785724235}
-  - component: {fileID: 365408767446179178}
   - component: {fileID: 3476419546202321047}
+  - component: {fileID: 8810548207348159544}
   m_Layer: 10
   m_Name: All Purpose Fighter
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,15 +81,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rechargeShield: 0
   shieldRechargeRate: 0
-  maxHealth: 100
-  maxShield: 0
+  maxHealth: 50
+  maxShield: 50
   rb: {fileID: 2189063828785724235}
   explosion: {fileID: 8473879462505808633, guid: a92f0a5a3a29ead4d8a756c2fe449f31,
     type: 3}
   initialExplosion: {fileID: 3624538832300168025, guid: 2f0f70041fb5ee049b8430e8230ff1bf,
     type: 3}
-  damageMultiplier: 0
-  shieldDamageMultiplier: 0
+  damageMultiplier: 2
+  shieldDamageMultiplier: 1
 --- !u!54 &2189063828785724235
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -106,20 +106,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &365408767446179178
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1986285087523316762}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2906205670695350515, guid: 99b89bce5da3399468cb8859c6250add, type: 3}
 --- !u!114 &3476419546202321047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,18 +119,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  rotateOrigin: {fileID: 1995839009893107867, guid: 19a649f34ec3bad4ea15e2ec6bf50bf8,
-    type: 3}
+  rotateOrigin: {fileID: 2989394412303934505}
   forwardValue: 100
   trackOffset: {x: 0, y: 10, z: 5}
-  hitRange: 30
-  backwardEvadeRange: 500
-  rightEvadeRange: 550
+  hitRange: 20
+  backwardEvadeRange: 800
+  rightEvadeRange: 800
   forwardEvadeRange: 800
   speed: 50
-  weaponDamage: 20
+  weaponDamage: 5
   fireRate: 1
   rotationSpeed: 2
+--- !u!65 &8810548207348159544
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986285087523316762}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 21.275358, y: 14.6986885, z: 17.13051}
+  m_Center: {x: -0.5025778, y: 1.1230755, z: -0.8195076}
 --- !u!1 &6278676052473698780
 GameObject:
   m_ObjectHideFlags: 0

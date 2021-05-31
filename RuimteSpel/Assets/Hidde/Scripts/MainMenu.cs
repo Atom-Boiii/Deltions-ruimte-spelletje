@@ -1,15 +1,43 @@
-﻿using UnityEditor;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class PlayerPrefSettings : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
-    [MenuItem("Saves/ResetSaves")]
-    static void DoSomething()
+    public Button continueButton;
+
+    private void Start()
+    {
+        if(PlayerPrefs.GetString("hasSave") == "true")
+        {
+            continueButton.interactable = true;
+        }
+    }
+
+    public void NewGame()
+    {
+        ClearAll();
+        PlayerPrefs.SetString("hasSave", "true");
+        SceneManager.LoadScene(1);
+    }
+
+    public void Continue()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    private void ClearAll()
     {
         PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetString("hasSave", "true");
-
         PlayerPrefs.SetFloat("MaxSpeed", 25f);
+        PlayerPrefs.SetInt("GreenCrystals", 0);
 
         PlayerPrefs.SetFloat("MiningDamage", 20f);
         PlayerPrefs.SetFloat("MiningRate", 0.7f);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-    
+    public ParticleSystem[] shootEffects;
         
    public float damage = 20;
     public float miningDamage = 20;
@@ -67,6 +67,11 @@ public class Shooting : MonoBehaviour
     }
     void Shoot()
     {
+        for (int i = 0; i < shootEffects.Length; i++)
+        {
+            shootEffects[i].Play();
+        }
+
         RaycastHit hit;
         if (Physics.Raycast(transform.position, shootPoint.TransformDirection(Vector3.forward), out hit, shootDistance, enemyLayer))
         {

@@ -19,6 +19,8 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         maxSize = PlayerPrefs.GetFloat("StorageSpace");
+        greenCrystals = PlayerPrefs.GetInt("GreenCrystals");
+        inventoryAmount += greenCrystals;
     }
 
     private void Update()

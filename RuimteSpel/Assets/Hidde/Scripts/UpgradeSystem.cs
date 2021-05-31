@@ -40,6 +40,8 @@ public class UpgradeSystem : MonoBehaviour
 
     private void Update()
     {
+        cash = PlayerPrefs.GetInt("Money");
+
         Cursor.lockState = CursorLockMode.Confined;
 
         pageIndexIndicator.text = "(" + pageIndex + "/" + "2)";

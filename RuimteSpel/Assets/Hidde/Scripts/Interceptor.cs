@@ -26,31 +26,48 @@ public class Interceptor : MonoBehaviour
 
     private float nextTimeToFire = 0f;
 
+    private void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("PlayerTarget").transform;
+    }
+
     private void Update()
     {
-        if(Vector3.Distance(transform.position, target.position) < hitRange && evadePhase == 0)
+        if(Vector3.Distance(transform.position, target.position) < hitRange && evadePhase == 1)
         {
-            evadePhase = 1;
+            evadePhase = 2;
             if(Time.time >= nextTimeToFire)
             {
                 nextTimeToFire = Time.time + 1f / fireRate;
                 Shoot();
             }
-        }else if(Vector3.Distance(transform.position, target.position) > backwardEvadeRange && evadePhase == 1)
-        {
-            evadePhase = 2;
-        }else if(Vector3.Distance(transform.position, target.position) > rightEvadeRange && evadePhase == 2)
+        }else if(Vector3.Distance(transform.position, target.position) > backwardEvadeRange && evadePhase == 2)
         {
             evadePhase = 3;
-        }
-        else if (Vector3.Distance(transform.position, target.position) > forwardEvadeRange && evadePhase == 3)
+        }else if(Vector3.Distance(transform.position, target.position) > rightEvadeRange && evadePhase == 3)
         {
-            evadePhase = 0;
+            evadePhase = 4;
+        }
+        else if (Vector3.Distance(transform.position, target.position) > forwardEvadeRange)
+        {
+            if(evadePhase == 0 || evadePhase == 4)
+            {
+                evadePhase = 1;
+            }
         }
 
         switch (evadePhase)
         {
             default:
+                Vector3 forward = target.forward * forwardEvadeRange;
+                dir = target.position + forward;
+                lookRotation = Quaternion.LookRotation(dir);
+                rotation = Quaternion.Lerp(rotateOrigin.rotation, lookRotation, Time.deltaTime * rotationSpeed).eulerAngles;
+                rotateOrigin.rotation = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
+
+                transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+                break;
+            case 1:
                 dir = target.position - transform.position;
                 lookRotation = Quaternion.LookRotation(dir);
                 rotation = Quaternion.Lerp(rotateOrigin.rotation, lookRotation, Time.deltaTime * rotationSpeed).eulerAngles;
@@ -60,7 +77,7 @@ public class Interceptor : MonoBehaviour
 
                 transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
                 break;
-            case 1:
+            case 2:
                 dir = -target.forward * forwardValue;
                 lookRotation = Quaternion.LookRotation(dir);
                 rotation = Quaternion.Lerp(rotateOrigin.rotation, lookRotation, Time.deltaTime * rotationSpeed).eulerAngles;
@@ -68,7 +85,7 @@ public class Interceptor : MonoBehaviour
 
                 transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
                 break;
-            case 2:
+            case 3:
                 dir = target.right * forwardValue;
                 lookRotation = Quaternion.LookRotation(dir);
                 rotation = Quaternion.Lerp(rotateOrigin.rotation, lookRotation, Time.deltaTime * rotationSpeed).eulerAngles;
@@ -76,8 +93,8 @@ public class Interceptor : MonoBehaviour
 
                 transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
                 break;
-            case 3:
-                Vector3 forward = target.forward * forwardEvadeRange;
+            case 4:
+                forward = target.forward * forwardEvadeRange;
                 dir = target.position + forward;
                 lookRotation = Quaternion.LookRotation(dir);
                 rotation = Quaternion.Lerp(rotateOrigin.rotation, lookRotation, Time.deltaTime * rotationSpeed).eulerAngles;
@@ -106,6 +123,13 @@ public class Interceptor : MonoBehaviour
     }
     private void Shoot()
     {
-        Debug.Log("Shoot");
+        int random = Random.Range(0, 100);
+
+        Debug.Log(random);
+
+        if (random >= 0 & random <= 25)
+        {
+            FindObjectOfType<Health>().DoDamage(weaponDamage);
+        }
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 257139242}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 857496475}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 1804271654}
   m_Layer: 5
   m_Name: Slider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 1889290402}
   m_Layer: 5
   m_Name: Fill Area
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 2049940661}
   m_Layer: 5
   m_Name: Fill
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 7653436536886848492}
   m_Layer: 5
   m_Name: Slider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -379,10 +379,10 @@ RectTransform:
   m_Father: {fileID: 7921858453483640661}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.9, y: 171}
-  m_SizeDelta: {x: 160, y: 11.446835}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -2.9, y: -19.550003}
+  m_SizeDelta: {x: 160, y: 11.446838}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7653436536886848492
 MonoBehaviour:
@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 8699867337378062057}
   m_Layer: 0
   m_Name: ThrusterInner.013
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 6319619269630580349}
   m_Layer: 0
   m_Name: ThrusterOuter.010
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -603,7 +603,7 @@ GameObject:
   - component: {fileID: 3743405982552473522}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -637,7 +637,7 @@ GameObject:
   - component: {fileID: 7462573388879092075}
   m_Layer: 0
   m_Name: ThrusterOuter.011
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -716,7 +716,7 @@ GameObject:
   - component: {fileID: 5346497402609833790}
   m_Layer: 0
   m_Name: ThrusterOuter.003
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -795,7 +795,7 @@ GameObject:
   - component: {fileID: 480194167369039126}
   m_Layer: 0
   m_Name: ThrusterInner.012
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -875,9 +875,10 @@ GameObject:
   - component: {fileID: 6990734586723043073}
   - component: {fileID: 7921858454018796125}
   - component: {fileID: 7921858454018796099}
+  - component: {fileID: 134318303}
   m_Layer: 0
   m_Name: PlayerShip
-  m_TagString: Untagged
+  m_TagString: PlayerTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -943,7 +944,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8b0f6c86128dc40ac05984ce735b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootEffects: []
+  shootEffects:
+  - {fileID: 219491935745116306}
+  - {fileID: 219491936344193486}
   damage: 20
   miningDamage: 40
   shootDistance: 1000
@@ -1090,6 +1093,25 @@ MonoBehaviour:
   inventoryAmount: 0
   maxSize: 6
   greenCrystalText: {fileID: 6191304233184676451}
+--- !u!114 &134318303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985219591396406767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9160ff1e4eb6f254d83d1d4182b4781f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathScreen: {fileID: 3291627176586216384}
+  controller: {fileID: 7320814790664138079}
+  shieldSlider: {fileID: 7653436536886848492}
+  healthSlider: {fileID: 3427209872778551496}
+  maxHealth: 100
+  maxShield: 100
+  Camera: {fileID: 2811633967659500117}
 --- !u!1 &1057648204290717568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1125,7 @@ GameObject:
   - component: {fileID: 4912174762797700819}
   m_Layer: 0
   m_Name: ThrusterOuter.016
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1180,7 +1202,7 @@ GameObject:
   - component: {fileID: 1234116027416113268}
   m_Layer: 0
   m_Name: ShootPoint
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1212,7 +1234,7 @@ GameObject:
   - component: {fileID: 1676461901706682799}
   m_Layer: 0
   m_Name: ThrusterOuter.001
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1291,7 +1313,7 @@ GameObject:
   - component: {fileID: 1178246349577756464}
   m_Layer: 0
   m_Name: ThrusterOuter.003
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1370,7 +1392,7 @@ GameObject:
   - component: {fileID: 3551621227548931906}
   m_Layer: 0
   m_Name: ThrusterOuter.012
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1687,7 +1709,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1449348525399592600}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2086827880}
+        m_MethodName: ReturnToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1871998252396074818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,7 +1732,7 @@ GameObject:
   - component: {fileID: 8433218646685764353}
   m_Layer: 5
   m_Name: Fill Area
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1721,7 +1754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: 0.00004553795}
+  m_AnchoredPosition: {x: 0, y: 0.000045776367}
   m_SizeDelta: {x: 0, y: 5.7234344}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2148485306988544843
@@ -1737,7 +1770,7 @@ GameObject:
   - component: {fileID: 1735262627954729594}
   m_Layer: 0
   m_Name: ThrusterOuter.015
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1816,7 +1849,7 @@ GameObject:
   - component: {fileID: 5027198255997295091}
   m_Layer: 0
   m_Name: ThrusterInner.010
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1895,7 +1928,7 @@ GameObject:
   - component: {fileID: 4106470556233607931}
   m_Layer: 0
   m_Name: ThrusterInner.004
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1974,7 +2007,7 @@ GameObject:
   - component: {fileID: 801408852731148015}
   m_Layer: 0
   m_Name: ThrusterOuter.007
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2053,7 +2086,7 @@ GameObject:
   - component: {fileID: 1292218836006431922}
   m_Layer: 0
   m_Name: ThrusterOuter.013
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2206,7 +2239,7 @@ GameObject:
   - component: {fileID: 8583474322224729208}
   m_Layer: 0
   m_Name: ThrusterOuter.006
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2286,7 +2319,7 @@ GameObject:
   - component: {fileID: 7835481476392725797}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2299,7 +2332,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2811633967659500117}
   m_LocalRotation: {x: 0.005000884, y: -3.0620735e-19, z: -6.123159e-17, w: 0.9999875}
-  m_LocalPosition: {x: 0, y: 5.519989, z: -14.440002}
+  m_LocalPosition: {x: -0, y: 7.46, z: -22.99}
   m_LocalScale: {x: 1, y: 1.2561926, z: 2.4980772}
   m_Children: []
   m_Father: {fileID: 2324048638082466012}
@@ -2400,7 +2433,7 @@ GameObject:
   - component: {fileID: 3880065978530946201}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2421,7 +2454,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: 0.00004553795}
+  m_AnchoredPosition: {x: 0, y: 0.000045776367}
   m_SizeDelta: {x: 0, y: 5.7234592}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7915353723208992182
@@ -2472,7 +2505,7 @@ GameObject:
   - component: {fileID: 7726398229631036858}
   m_Layer: 5
   m_Name: Main
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2511,7 +2544,7 @@ GameObject:
   - component: {fileID: 8198828137824324144}
   m_Layer: 0
   m_Name: ThrusterInner.015
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2590,7 +2623,7 @@ GameObject:
   - component: {fileID: 6976015976959669424}
   m_Layer: 5
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2611,7 +2644,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: 0.00004553795}
+  m_AnchoredPosition: {x: 0, y: 0.000045776367}
   m_SizeDelta: {x: 0, y: 5.7234592}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &346324396205581223
@@ -2664,7 +2697,7 @@ GameObject:
   - component: {fileID: 8315125538921946728}
   m_Layer: 0
   m_Name: ThrusterInner.014
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2743,7 +2776,7 @@ GameObject:
   - component: {fileID: 7863335016121205139}
   m_Layer: 0
   m_Name: ThrusterInner.013
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2824,7 +2857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2654316465520514624
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2859,7 +2892,7 @@ GameObject:
   - component: {fileID: 3289996781582555917}
   m_Layer: 0
   m_Name: Thruster (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2923,7 +2956,7 @@ GameObject:
   - component: {fileID: 7077332379955189161}
   m_Layer: 0
   m_Name: ThrusterOuter.011
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3002,7 +3035,7 @@ GameObject:
   - component: {fileID: 4992437453609801091}
   m_Layer: 0
   m_Name: ThrusterOuter.012
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3083,7 +3116,7 @@ GameObject:
   - component: {fileID: 5355710926229295837}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3189,7 +3222,7 @@ GameObject:
   - component: {fileID: 3936686804365726787}
   m_Layer: 0
   m_Name: ThrusterOuter.007
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3268,7 +3301,7 @@ GameObject:
   - component: {fileID: 3185739894191330799}
   m_Layer: 0
   m_Name: ThrusterOuter.009
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3347,7 +3380,7 @@ GameObject:
   - component: {fileID: 2777380372391076924}
   m_Layer: 0
   m_Name: ThrusterInner.012
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3426,7 +3459,7 @@ GameObject:
   - component: {fileID: 2313135271098668113}
   m_Layer: 0
   m_Name: ThrusterInner.011
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3505,7 +3538,7 @@ GameObject:
   - component: {fileID: 76869676179018587}
   m_Layer: 0
   m_Name: ThrusterInner.007
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3584,7 +3617,7 @@ GameObject:
   - component: {fileID: 6741987154046239841}
   m_Layer: 0
   m_Name: ThrusterInner.002
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3663,7 +3696,7 @@ GameObject:
   - component: {fileID: 4400044571331134707}
   m_Layer: 0
   m_Name: ThrusterOuter.004
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3742,7 +3775,7 @@ GameObject:
   - component: {fileID: 6575335614380595552}
   m_Layer: 0
   m_Name: ThrusterOuter.001
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3954,7 +3987,7 @@ GameObject:
   - component: {fileID: 2642279552521611566}
   m_Layer: 0
   m_Name: ThrusterInner.005
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4033,7 +4066,7 @@ GameObject:
   - component: {fileID: 2860212640873497614}
   m_Layer: 0
   m_Name: ThrusterOuter.008
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4112,7 +4145,7 @@ GameObject:
   - component: {fileID: 5722137571012341600}
   m_Layer: 0
   m_Name: ThrusterInner.006
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4296,7 +4329,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7199184527820563549}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2086827880}
+        m_MethodName: ReturnToStation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5009413176466659254
 GameObject:
   m_ObjectHideFlags: 0
@@ -4310,7 +4354,7 @@ GameObject:
   - component: {fileID: 7601226505653460311}
   m_Layer: 0
   m_Name: ThrusterOuter.009
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4389,7 +4433,7 @@ GameObject:
   - component: {fileID: 7183427217432928400}
   m_Layer: 0
   m_Name: ThrusterInner.002
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4468,7 +4512,7 @@ GameObject:
   - component: {fileID: 2696274886731782419}
   m_Layer: 0
   m_Name: ThrusterInner.015
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4547,7 +4591,7 @@ GameObject:
   - component: {fileID: 8343553408303747546}
   m_Layer: 0
   m_Name: ThrusterInner.016
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4626,7 +4670,7 @@ GameObject:
   - component: {fileID: 4774266960050656274}
   m_Layer: 0
   m_Name: ThrusterInner.008
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4705,7 +4749,7 @@ GameObject:
   - component: {fileID: 55739249552858992}
   m_Layer: 0
   m_Name: ThrusterInner.003
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4784,7 +4828,7 @@ GameObject:
   - component: {fileID: 2675642925990304399}
   m_Layer: 0
   m_Name: ThrusterOuter.004
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4863,7 +4907,7 @@ GameObject:
   - component: {fileID: 1865605507565894709}
   m_Layer: 5
   m_Name: Fill
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4937,7 +4981,7 @@ GameObject:
   - component: {fileID: 4152392090706298222}
   m_Layer: 0
   m_Name: ThrusterOuter.008
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5016,7 +5060,7 @@ GameObject:
   - component: {fileID: 5988077829092549325}
   m_Layer: 0
   m_Name: ThrusterInner.016
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5095,7 +5139,7 @@ GameObject:
   - component: {fileID: 6777240959203720527}
   m_Layer: 0
   m_Name: ThrusterOuter.014
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5174,7 +5218,7 @@ GameObject:
   - component: {fileID: 6798775642915730132}
   m_Layer: 0
   m_Name: ThrusterInner.001
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5253,7 +5297,7 @@ GameObject:
   - component: {fileID: 6888446529308678553}
   m_Layer: 0
   m_Name: ThrusterOuter.016
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5332,7 +5376,7 @@ GameObject:
   - component: {fileID: 998388503051028991}
   m_Layer: 0
   m_Name: ThrusterOuter.006
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5411,7 +5455,7 @@ GameObject:
   - component: {fileID: 5257923762749084101}
   m_Layer: 5
   m_Name: Fill
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5485,7 +5529,7 @@ GameObject:
   - component: {fileID: 3383957050233640149}
   m_Layer: 0
   m_Name: ThrusterOuter.002
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5564,7 +5608,7 @@ GameObject:
   - component: {fileID: 453666260185950143}
   m_Layer: 0
   m_Name: ThrusterInner.008
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5643,7 +5687,7 @@ GameObject:
   - component: {fileID: 2767333640600407030}
   m_Layer: 0
   m_Name: ThrusterOuter.002
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5722,7 +5766,7 @@ GameObject:
   - component: {fileID: 6191304233184676451}
   m_Layer: 5
   m_Name: Crystal text
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5855,7 +5899,7 @@ GameObject:
   - component: {fileID: 976504558491025027}
   m_Layer: 0
   m_Name: ThrusterInner.001
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5934,7 +5978,7 @@ GameObject:
   - component: {fileID: 6404566462595032786}
   m_Layer: 0
   m_Name: ThrusterInner.010
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6013,7 +6057,7 @@ GameObject:
   - component: {fileID: 7186630695087160944}
   m_Layer: 0
   m_Name: ThrusterInner.011
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6092,7 +6136,7 @@ GameObject:
   - component: {fileID: 8219749045434823729}
   m_Layer: 0
   m_Name: MainModel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6107,7 +6151,8 @@ Transform:
   m_LocalRotation: {x: 0.70710564, y: 0.000002130866, z: 0.000002078712, w: -0.707108}
   m_LocalPosition: {x: 0.09, y: -0.3, z: 3.94}
   m_LocalScale: {x: 100, y: 100, z: 100}
-  m_Children: []
+  m_Children:
+  - {fileID: 7672622175223694554}
   m_Father: {fileID: 2324048638082466012}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -89.99999, y: 180, z: 180}
@@ -6169,7 +6214,7 @@ GameObject:
   - component: {fileID: 428597711119732842}
   m_Layer: 0
   m_Name: Thruster (2)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6233,7 +6278,7 @@ GameObject:
   - component: {fileID: 8401175767897555074}
   m_Layer: 0
   m_Name: ThrusterOuter.013
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6312,7 +6357,7 @@ GameObject:
   - component: {fileID: 1154093815612788268}
   m_Layer: 0
   m_Name: ThrusterInner.014
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6390,9 +6435,10 @@ GameObject:
   - component: {fileID: 7921858453483640660}
   - component: {fileID: 7921858453483640659}
   - component: {fileID: 7921858453483640658}
+  - component: {fileID: 2086827880}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6482,6 +6528,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2086827880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7921858453483640657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89cb50f857e84f14a8199ac64d352431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7921858453625887580
 GameObject:
   m_ObjectHideFlags: 0
@@ -6494,7 +6552,7 @@ GameObject:
   - component: {fileID: 7921858453625887583}
   m_Layer: 0
   m_Name: InventorySystem
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6537,7 +6595,7 @@ GameObject:
   - component: {fileID: 7921858453672829530}
   m_Layer: 0
   m_Name: Colliders
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6571,7 +6629,7 @@ GameObject:
   - component: {fileID: 7921858453718832697}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6615,7 +6673,7 @@ GameObject:
   - component: {fileID: 7921858453869103562}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6659,7 +6717,7 @@ GameObject:
   - component: {fileID: 7921858454329645584}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6704,7 +6762,7 @@ GameObject:
   - component: {fileID: 7921858454879784208}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6778,7 +6836,7 @@ GameObject:
   - component: {fileID: 2421597153447686567}
   m_Layer: 0
   m_Name: ThrusterOuter.005
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6857,7 +6915,7 @@ GameObject:
   - component: {fileID: 3773839063432790097}
   m_Layer: 0
   m_Name: ThrusterInner.005
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6936,7 +6994,7 @@ GameObject:
   - component: {fileID: 5025254424088168201}
   m_Layer: 0
   m_Name: ThrusterOuter.010
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7013,7 +7071,7 @@ GameObject:
   - component: {fileID: 1389402861520046304}
   m_Layer: 0
   m_Name: RotationPoint
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7046,7 +7104,7 @@ GameObject:
   - component: {fileID: 4791987934732451388}
   m_Layer: 0
   m_Name: ThrusterInner.004
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7125,7 +7183,7 @@ GameObject:
   - component: {fileID: 3926454419340649941}
   m_Layer: 0
   m_Name: ThrusterInner.009
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7204,7 +7262,7 @@ GameObject:
   - component: {fileID: 8192952962744885576}
   m_Layer: 0
   m_Name: ThrusterOuter.005
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7283,7 +7341,7 @@ GameObject:
   - component: {fileID: 7847899274018868109}
   m_Layer: 0
   m_Name: ThrusterInner.009
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7494,7 +7552,7 @@ GameObject:
   - component: {fileID: 3427209872778551496}
   m_Layer: 5
   m_Name: Slider (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7515,10 +7573,10 @@ RectTransform:
   m_Father: {fileID: 7921858453483640661}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.9, y: 159.55006}
-  m_SizeDelta: {x: 160, y: 11.446835}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -2.9, y: -31}
+  m_SizeDelta: {x: 160, y: 11.446838}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3427209872778551496
 MonoBehaviour:
@@ -7581,7 +7639,7 @@ GameObject:
   - component: {fileID: 7411482755480657107}
   m_Layer: 5
   m_Name: Fill Area
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7603,7 +7661,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: 0.00004553795}
+  m_AnchoredPosition: {x: 0, y: 0.000045776367}
   m_SizeDelta: {x: 0, y: 5.7234344}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8852182948449218327
@@ -7619,7 +7677,7 @@ GameObject:
   - component: {fileID: 255945541065015865}
   m_Layer: 0
   m_Name: ThrusterInner.003
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7698,7 +7756,7 @@ GameObject:
   - component: {fileID: 4253537738300834669}
   m_Layer: 0
   m_Name: ThrusterInner.007
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7777,7 +7835,7 @@ GameObject:
   - component: {fileID: 1163679758880613845}
   m_Layer: 0
   m_Name: ThrusterInner.006
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7856,7 +7914,7 @@ GameObject:
   - component: {fileID: 2062244585773197086}
   m_Layer: 0
   m_Name: ThrusterOuter.015
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7935,7 +7993,7 @@ GameObject:
   - component: {fileID: 628858300031519537}
   m_Layer: 0
   m_Name: ThrusterOuter.014
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8001,3 +8059,323 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1001 &7921858453430766074
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7672622175223694554}
+    m_Modifications:
+    - target: {fileID: 921048408199108239, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_Name
+      value: Laser (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 921048408199108239, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0034
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0032
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7372774
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.67559016
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4695509691423633241, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997217055444119604, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997217055444119604, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997217055444119604, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997217055444119604, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997217055444119604, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 500
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d5b5807553d70364e90085a6abf1f9a9, type: 3}
+--- !u!198 &219491936344193486 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7997217055444119604, guid: d5b5807553d70364e90085a6abf1f9a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 7921858453430766074}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7921858454280976550
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7672622175223694554}
+    m_Modifications:
+    - target: {fileID: 921048408199108239, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_Name
+      value: Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 921048408199108239, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0035
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0032
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7372774
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.67559016
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879636199383747416, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4695509691423633241, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997217055444119604, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997217055444119604, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997217055444119604, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997217055444119604, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997217055444119604, guid: d5b5807553d70364e90085a6abf1f9a9,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 500
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d5b5807553d70364e90085a6abf1f9a9, type: 3}
+--- !u!198 &219491935745116306 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7997217055444119604, guid: d5b5807553d70364e90085a6abf1f9a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 7921858454280976550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7921858454665503537
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7086773452096425822}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 8bc2447ee35676347b273f60593be6cf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8bc2447ee35676347b273f60593be6cf,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8bc2447ee35676347b273f60593be6cf,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8bc2447ee35676347b273f60593be6cf,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8bc2447ee35676347b273f60593be6cf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8bc2447ee35676347b273f60593be6cf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.12125
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8bc2447ee35676347b273f60593be6cf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8bc2447ee35676347b273f60593be6cf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8bc2447ee35676347b273f60593be6cf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8bc2447ee35676347b273f60593be6cf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8bc2447ee35676347b273f60593be6cf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8bc2447ee35676347b273f60593be6cf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8bc2447ee35676347b273f60593be6cf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8bc2447ee35676347b273f60593be6cf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 8bc2447ee35676347b273f60593be6cf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4ac431d3ca15d414caad8d58cbb8f9a2, type: 2}
+    - target: {fileID: 919132149155446097, guid: 8bc2447ee35676347b273f60593be6cf,
+        type: 3}
+      propertyPath: m_Name
+      value: FrontTurretModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8bc2447ee35676347b273f60593be6cf,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8bc2447ee35676347b273f60593be6cf, type: 3}
+--- !u!4 &7672622175223694554 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8bc2447ee35676347b273f60593be6cf,
+    type: 3}
+  m_PrefabInstance: {fileID: 7921858454665503537}
+  m_PrefabAsset: {fileID: 0}

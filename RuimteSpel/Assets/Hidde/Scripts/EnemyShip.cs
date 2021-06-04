@@ -57,12 +57,10 @@ public class EnemyShip : MonoBehaviour
 
     public void TakeDamage(float damageAmount)
     {
-        isBeingHit = true;
-
         if(shield <= 0)
         {
             health -= damageAmount * damageMultiplier;
-        }else if(shield >= 1)
+        }else if(shield > 0)
         {
             shield -= damageAmount * shieldDamageMultiplier;
         }
@@ -76,6 +74,8 @@ public class EnemyShip : MonoBehaviour
         {
             StartCoroutine(SetHitStatus());
         }
+
+        isBeingHit = true;
     }
 
     private void Die()

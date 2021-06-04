@@ -26,6 +26,7 @@ public class Shooting : MonoBehaviour
 
 
     private float _Timer;
+    private float nextTimeToFire;
 
     private void Start()
     {
@@ -43,20 +44,19 @@ public class Shooting : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            _Timer += 1 * Time.deltaTime;
-             if (_Timer >= secondsBetweenShots)
-               {
-                    Shoot();
-                    _Timer = 0;
-               }
+             if (Time.time >= nextTimeToFire)
+             {
+                nextTimeToFire = Time.time + 1f / secondsBetweenShots;
+                Shoot();
+             }
         }
         if (Input.GetMouseButton(1))
         {
             _Timer += 1 * Time.deltaTime;
-            if (_Timer >= secondsBetweenMine)
+            if (Time.time >= _Timer)
             {
+                _Timer = Time.time + 1f/ secondsBetweenMine;
                 Mine();
-                _Timer = 0;
             }
             
         }
@@ -73,8 +73,9 @@ public class Shooting : MonoBehaviour
         }
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, shootPoint.TransformDirection(Vector3.forward), out hit, shootDistance, enemyLayer))
+        if (Physics.Raycast(transform.position, shootPoint.forward, out hit, shootDistance * 10, enemyLayer))
         {
+            Debug.Log("I hit " + hit.transform.name);
             hit.transform.GetComponent<EnemyShip>().TakeDamage(damage);
         }
                 

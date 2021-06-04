@@ -12,7 +12,7 @@ public class PlayerPrefSettings : MonoBehaviour
         PlayerPrefs.SetFloat("MaxSpeed", 25f);
 
         PlayerPrefs.SetFloat("MiningDamage", 20f);
-        PlayerPrefs.SetFloat("MiningRate", 0.7f);
+        PlayerPrefs.SetFloat("MiningRate", 1f);
         PlayerPrefs.SetFloat("StorageSpace", 20);
 
         PlayerPrefs.SetInt("Thrust 1", 1);
@@ -24,9 +24,9 @@ public class PlayerPrefSettings : MonoBehaviour
 
         PlayerPrefs.SetFloat("ShootDistance", 100f);
         PlayerPrefs.SetFloat("ShootDamage", 10f);
-        PlayerPrefs.SetFloat("ShootRate", 0.7f);
+        PlayerPrefs.SetFloat("ShootRate", 2f);
 
-        PlayerPrefs.SetFloat("Shield", 25f);
-        PlayerPrefs.SetFloat("Hull", 50f);
+        PlayerPrefs.SetFloat("Shield", 50f);
+        PlayerPrefs.SetFloat("Hull", 75f);
     }
 }

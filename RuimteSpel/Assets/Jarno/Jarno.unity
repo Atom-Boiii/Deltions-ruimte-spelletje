@@ -721,6 +721,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7320814790664138079, guid: ef7e7b3590439b446b7d231b6b813b6a,
         type: 3}
+      propertyPath: lookRateSpeed
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320814790664138079, guid: ef7e7b3590439b446b7d231b6b813b6a,
+        type: 3}
       propertyPath: minMaxForwardSpeed.x
       value: -100
       objectReference: {fileID: 0}
@@ -917,6 +922,8 @@ MonoBehaviour:
   maxHealth: 100
   maxShield: 100
   Camera: {fileID: 0}
+  shieldCooldownTimer: 20
+  shieldRechargeRate: 1
 --- !u!114 &1189297195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1794,6 +1801,8 @@ MonoBehaviour:
   maxHealth: 100
   maxShield: 100
   Camera: {fileID: 0}
+  shieldCooldownTimer: 20
+  shieldRechargeRate: 1
 --- !u!1 &1842487643
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class MovementController : MonoBehaviour
 {
     public Slider speedSlider;
 
+    [Header("Speed Settings")]
     public float maxForwardSpeed = 25f;
     public float maxStrafeSpeed = 7.5f;
     public float forwardEncrease = 2f;
@@ -15,11 +16,14 @@ public class MovementController : MonoBehaviour
     public float hoverSpeed = 5f;
     public float idlespeed = 2f;
 
+    [Header("Direction Indicator")]
     public Transform directionIndicator;
 
+    [Header("CurrentSpeed")]
     public float currentForwardSpeed = 0;
     public float currentStrafeSpeed = 0;
 
+    [Header("MinMaxSpeed")]
     public Vector2 minMaxForwardSpeed = new Vector2(-3,20);
     public Vector2 minMaxStraveSpeed = new Vector2(-2,2);
 
@@ -28,21 +32,23 @@ public class MovementController : MonoBehaviour
     private float activeHoverSpeed;
     private float activeIdleSpeed;
 
+    [Header("Rotate to cursor speed")]
     public float lookRateSpeed = 90f;
 
     private Vector2 lookInput, screenCenter, mouseDistance;
 
+    [Header("Roll Speed")]
     private float rollInput;
     public float rollSpeed = 90f;
     public float rollAcceleration = 3.5f;
 
-    //screenshake
+    [Header("Screen Shake")]
     public Transform cameraObject;
     private Vector3 localposition;
     private float screenShakeDuration;
     private float screenShakeIntensity;
 
-    //freelook
+    [Header("FreeLook")]
     private bool freeLookActive;
     public float freeLookSens = 1;
     private Vector3 originalCameraRot;

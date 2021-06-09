@@ -18,6 +18,9 @@ public class Health : MonoBehaviour
 
     private float currentHealth;
     private float currenShield;
+    public float shieldCooldownTimer = 20;
+    public float shieldRechargeRate = 1;
+    private float shieldTimer;
 
     private void Start()
     {
@@ -40,6 +43,15 @@ public class Health : MonoBehaviour
         {
             DoDamage(999f);
         }
+
+
+        shieldTimer += 1 * Time.deltaTime;
+        if (shieldTimer >= shieldCooldownTimer)
+        {
+            if (currenShield < maxShield)
+                currenShield += shieldRechargeRate * Time.deltaTime;
+        }
+
     }
 
     public void DoDamage(float damageamount)
@@ -47,9 +59,12 @@ public class Health : MonoBehaviour
         if(currenShield <= 0f)
         {
             currentHealth -= damageamount;
-        }else if(currenShield >= 1f)
+            shieldTimer = 0;
+        }
+        else if(currenShield >= 1f)
         {
             currenShield -= damageamount / 2f;
+            shieldTimer = 0;
         }
 
         shieldSlider.value = currenShield;

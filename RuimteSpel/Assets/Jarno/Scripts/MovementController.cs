@@ -36,9 +36,22 @@ public class MovementController : MonoBehaviour
     public float rollSpeed = 90f;
     public float rollAcceleration = 3.5f;
 
+    //screenshake
+    public Transform cameraObject;
+    private Vector3 localposition;
+    private float screenShakeDuration;
+    private float screenShakeIntensity;
+
+    //freelook
+    private bool freeLookActive;
+    public float freeLookSens = 1;
+    private Vector3 originalCameraRot;
+
     void Start()
     {
         minMaxForwardSpeed.y = PlayerPrefs.GetFloat("MaxSpeed");
+        if (minMaxForwardSpeed.y == 0)
+            minMaxForwardSpeed.y = 100;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.lockState = CursorLockMode.None;
@@ -46,8 +59,11 @@ public class MovementController : MonoBehaviour
         screenCenter.x = Screen.width * .5f;
         screenCenter.y = Screen.height * .5f;
 
-        
+        localposition = cameraObject.transform.localPosition;
+        originalCameraRot = cameraObject.localEulerAngles;
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -74,7 +90,8 @@ public class MovementController : MonoBehaviour
 
         rollInput = Mathf.Lerp(rollInput, Input.GetAxisRaw("Roll"), rollAcceleration * Time.deltaTime);
 
-        transform.Rotate(-mouseDistance.y * lookRateSpeed * Time.deltaTime, mouseDistance.x * lookRateSpeed * Time.deltaTime, rollInput * rollSpeed * Time.deltaTime, Space.Self);
+        if (!freeLookActive)
+            transform.Rotate(-mouseDistance.y * lookRateSpeed * Time.deltaTime, mouseDistance.x * lookRateSpeed * Time.deltaTime, rollInput * rollSpeed * Time.deltaTime, Space.Self);
 
         //foreward
         currentForwardSpeed += Input.GetAxisRaw("Vertical") * forwardEncrease * Time.deltaTime;
@@ -89,6 +106,23 @@ public class MovementController : MonoBehaviour
         if (currentStrafeSpeed > minMaxStraveSpeed.y)
             currentStrafeSpeed = minMaxStraveSpeed.y;
 
+
+        //ScreenShake
+        if (screenShakeDuration > 0)
+        {
+            cameraObject.transform.localPosition = new Vector3(localposition.x + Random.insideUnitSphere.x * screenShakeIntensity, localposition.y + Random.insideUnitSphere.y * screenShakeIntensity, localposition.z);
+            screenShakeDuration -= 1 * Time.deltaTime;
+        }
+        else
+        {
+            cameraObject.transform.localPosition = localposition;
+        }
+
+        //check screenshake
+        if(Input.GetAxisRaw("Vertical") == -1 || Input.GetAxisRaw("Vertical") == 1)
+        {
+            Effect_ScreenShake(.1f, 0.1f);
+        }
 
         /*
         currentForwardSpeed = Mathf.Lerp(currentForwardSpeed, Input.GetAxisRaw("Vertical") * maxForwardSpeed, forwardAcceleration * Time.deltaTime);
@@ -105,6 +139,33 @@ public class MovementController : MonoBehaviour
 
         transform.position += transform.forward * currentForwardSpeed * Time.deltaTime;
         transform.position += (transform.right * currentStrafeSpeed * Time.deltaTime) + (transform.up * activeHoverSpeed * Time.deltaTime);
+
+        //freelook
+        if (Input.GetKey(KeyCode.LeftAlt))
+            freeLookActive = true;
+        else
+            freeLookActive = false;
+
+        if (freeLookActive)
+        {
+            float mousex = Input.GetAxis("Mouse X") * freeLookSens;
+            float mousey = Input.GetAxis("Mouse Y") * freeLookSens;
+            cameraObject.transform.eulerAngles += new Vector3(-mousey, mousex, 0);
+        }
+        else
+            cameraObject.transform.localEulerAngles = originalCameraRot;
+
+        //backlook
+        if(Input.GetKey(KeyCode.LeftControl))
+        {
+            cameraObject.transform.localEulerAngles = new Vector3(cameraObject.transform.localEulerAngles.x,180, cameraObject.transform.localEulerAngles.z);
+        }
+    }
+
+    public void Effect_ScreenShake(float duration, float intesity)
+    {
+        screenShakeDuration = duration;
+        screenShakeIntensity = intesity;
     }
 }
                                                                   

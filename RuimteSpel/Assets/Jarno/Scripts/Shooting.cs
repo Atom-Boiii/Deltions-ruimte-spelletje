@@ -21,7 +21,7 @@ public class Shooting : MonoBehaviour
    
 
    
-   public float secondsBetweenShots = 0.5f;
+    public float secondsBetweenShots = 0.5f;
     public float secondsBetweenMine = 0.5f;
 
 
@@ -52,7 +52,16 @@ public class Shooting : MonoBehaviour
         }
         if (Input.GetMouseButton(1))
         {
-            _Timer += 1 * Time.deltaTime;
+            RaycastHit _hit;
+            if (Physics.Raycast(shootPoint.position, shootPoint.forward, out _hit, mineDistance * 1000, mineralLayer))
+            {
+                lr.SetPosition(1, _hit.point);
+            }
+            else
+            {
+                lr.SetPosition(1, spherePoint.position);
+            }
+
             if (Time.time >= _Timer)
             {
                 _Timer = Time.time + 1f/ secondsBetweenMine;
@@ -62,7 +71,7 @@ public class Shooting : MonoBehaviour
         }
         else
         {
-            lr.enabled = false;
+            lr.SetPosition(1, spherePoint.position);
         }
     }
     void Shoot()

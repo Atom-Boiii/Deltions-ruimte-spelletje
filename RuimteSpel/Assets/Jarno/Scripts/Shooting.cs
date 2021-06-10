@@ -52,17 +52,7 @@ public class Shooting : MonoBehaviour
         }
         if (Input.GetMouseButton(1))
         {
-            RaycastHit _hit;
-            if(Physics.Raycast(shootPoint.position, shootPoint.forward, out _hit, mineDistance * 1000, mineralLayer))
-            {
-                lr.SetPosition(1, _hit.point);
-            }
-            else
-            {
-                lr.SetPosition(1, spherePoint.position); ;
-            }
-
-
+            _Timer += 1 * Time.deltaTime;
             if (Time.time >= _Timer)
             {
                 _Timer = Time.time + 1f/ secondsBetweenMine;
@@ -72,7 +62,7 @@ public class Shooting : MonoBehaviour
         }
         else
         {
-            lr.SetPosition(1, spherePoint.position); ;
+            lr.enabled = false;
         }
     }
     void Shoot()
@@ -100,6 +90,14 @@ public class Shooting : MonoBehaviour
             {
                 hit.transform.GetComponent<Astroid>().TakeDamage(miningDamage);
             }
+            lr.enabled = true;
+            checkhit = true;
+            lr.SetPosition(1, hit.point);
+        }
+        
+        if(!checkhit)
+        {
+            lr.enabled = false;
         }
     }
 }

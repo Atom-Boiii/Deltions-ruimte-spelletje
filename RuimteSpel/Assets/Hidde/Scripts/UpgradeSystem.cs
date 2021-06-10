@@ -2,13 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.Playables;
 
 public class UpgradeSystem : MonoBehaviour
 {
-    public GameObject mainView;
-    public PlayableDirector director, director2;
-
     public Upgrade[] upgrades;
 
     public int cash = 0;
@@ -54,14 +50,12 @@ public class UpgradeSystem : MonoBehaviour
 
     public void OpenPanel()
     {
-        director.Play();
-        mainView.SetActive(false);   
+        upgradeMainPanel.SetActive(true);
     }
 
     public void ClosePanel()
     {
-        director2.Play();
-        mainView.SetActive(true);
+        upgradeMainPanel.SetActive(false);
     }
 
     public void PageForward()

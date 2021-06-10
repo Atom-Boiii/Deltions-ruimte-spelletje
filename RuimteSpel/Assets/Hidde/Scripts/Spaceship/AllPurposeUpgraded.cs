@@ -5,8 +5,6 @@ using UnityEngine;
 public class AllPurposeUpgraded : MonoBehaviour
 {
     public ParticleSystem shootEffect;
-    public Transform indicator;
-    public TextMesh indicatorText;
 
     public float torque = 5f;
     public float thrust = 10f;
@@ -40,11 +38,6 @@ public class AllPurposeUpgraded : MonoBehaviour
 
     private void Update()
     {
-        indicator.LookAt(target);
-
-        float distance = Vector3.Distance(transform.position, target.position);
-        indicatorText.fontSize = (int)distance;
-
         RaycastHit hit;
         if(Physics.Raycast(transform.position, transform.forward, out hit, hitRange, mask))
         {

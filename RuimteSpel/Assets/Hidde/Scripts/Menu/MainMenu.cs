@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.Playables;
 
 public class MainMenu : MonoBehaviour
 {
     public PlayableDirector playDirector;
-    public PlayableDirector settingsDirector;
+    public PlayableDirector settingsDirector1;
+    public PlayableDirector settingsDirector2;
 
     public void NewGame()
     {
@@ -14,6 +16,8 @@ public class MainMenu : MonoBehaviour
         // Run the playDirector
 
         ClearAllPrefs();
+
+        FindObjectOfType<SceneController>().CallStart();
         playDirector.Play();
     }
 
@@ -21,17 +25,29 @@ public class MainMenu : MonoBehaviour
     {
         // Run the playDirector
 
+        FindObjectOfType<SceneController>().CallStart();
         playDirector.Play();
     }
 
     public void OpenSettings()
     {
         // Open the settings screen
+
+        settingsDirector1.Play();
+    }
+
+    public void CloseSettings()
+    {
+        // Close the settings
+
+        settingsDirector2.Play();
     }
 
     public void QuitGame()
     {
         // Open quitting screen
+
+        EditorApplication.isPlaying = false;
     }
 
     private void ClearAllPrefs()

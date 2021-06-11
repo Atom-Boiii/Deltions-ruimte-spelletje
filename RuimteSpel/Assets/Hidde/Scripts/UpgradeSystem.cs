@@ -26,7 +26,7 @@ public class UpgradeSystem : MonoBehaviour
     public GameObject upgradePanel1;
     public GameObject upgradePanel2;
 
-    private void Start()
+    public void Initiate()
     {
         Cursor.visible = true;
 

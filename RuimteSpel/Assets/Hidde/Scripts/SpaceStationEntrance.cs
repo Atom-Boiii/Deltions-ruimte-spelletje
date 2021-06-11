@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Playables;
 
 public class SpaceStationEntrance : MonoBehaviour
 {
+    public PlayableDirector returnDirector;
     public bool isExterior;
 
     public void LeaveHangar()
@@ -22,6 +24,6 @@ public class SpaceStationEntrance : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        SceneManager.LoadScene(0);
+        returnDirector.Play();
     }
 }

@@ -13,7 +13,7 @@ public class StationInventory : MonoBehaviour
 
     private int greenCrystals;
 
-    public void Start()
+    public void Initiate()
     {
         greenCrystals = PlayerPrefs.GetInt("GreenCrystals");
         crystalText.text = "Green crystals: " + greenCrystals;

@@ -263,6 +263,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 134318303, guid: ef7e7b3590439b446b7d231b6b813b6a, type: 3}
+      propertyPath: shieldCooldownTimer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 257139240, guid: ef7e7b3590439b446b7d231b6b813b6a, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -764,6 +768,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7320814790664138079, guid: ef7e7b3590439b446b7d231b6b813b6a,
         type: 3}
+      propertyPath: freeLookSens
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320814790664138079, guid: ef7e7b3590439b446b7d231b6b813b6a,
+        type: 3}
       propertyPath: directionIndicator
       value: 
       objectReference: {fileID: 2068098773}
@@ -1209,7 +1218,7 @@ MonoBehaviour:
   shootEffect: {fileID: 732587908}
   torque: 1000
   thrust: 1000
-  rotationSpeed: 3
+  rotationSpeed: 1.5
   target: {fileID: 2030311922}
   hitRange: 100
   mask:
@@ -1275,6 +1284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1628f4af8327ee342bd2f5400e2dc427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipController: {fileID: 1517945413}
   rechargeShield: 0
   shieldRechargeRate: 0
   maxHealth: 50

@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
     public PlayableDirector playDirector;
     public PlayableDirector settingsDirector1;
     public PlayableDirector settingsDirector2;
+    public PlayableDirector quitDirector1;
+    public PlayableDirector quitDirector2;
 
     public void NewGame()
     {
@@ -41,6 +43,16 @@ public class MainMenu : MonoBehaviour
         // Close the settings
 
         settingsDirector2.Play();
+    }
+
+    public void CallQuit()
+    {
+        quitDirector1.Play();
+    }
+
+    public void CancelQuit()
+    {
+        quitDirector2.Play();
     }
 
     public void QuitGame()

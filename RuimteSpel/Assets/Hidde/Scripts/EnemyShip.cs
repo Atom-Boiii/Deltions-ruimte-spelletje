@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyShip : MonoBehaviour
 {
+    public Behaviour shipController;
+
     public bool rechargeShield;
     public float shieldRechargeRate;
 
@@ -80,6 +82,8 @@ public class EnemyShip : MonoBehaviour
 
     private void Die()
     {
+        shipController.enabled = false;
+
         rb.isKinematic = false;
         rb.AddForce(transform.forward * 1000f);
         rb.AddTorque(new Vector3(50f, 50f, 50f));

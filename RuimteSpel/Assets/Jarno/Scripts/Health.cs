@@ -44,6 +44,8 @@ public class Health : MonoBehaviour
             DoDamage(999f);
         }
 
+        shieldSlider.value = currenShield;
+        healthSlider.value = currentHealth;
 
         shieldTimer += 1 * Time.deltaTime;
         if (shieldTimer >= shieldCooldownTimer)
@@ -66,9 +68,6 @@ public class Health : MonoBehaviour
             currenShield -= damageamount / 2f;
             shieldTimer = 0;
         }
-
-        shieldSlider.value = currenShield;
-        healthSlider.value = currentHealth;
 
         if (currentHealth <= 0)
         {

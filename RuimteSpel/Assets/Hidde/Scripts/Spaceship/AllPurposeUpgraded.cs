@@ -47,16 +47,18 @@ public class AllPurposeUpgraded : MonoBehaviour
                 Shoot(hit);
             }
         }
-    }
 
-    private void FixedUpdate()
-    {
-        Vector3 targetLocation = target.position - transform.position + offset;
         Vector3 lookLocation = target.position - transform.position;
 
         Quaternion lookRotation = Quaternion.LookRotation(lookLocation);
         Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.fixedDeltaTime * rotationSpeed).eulerAngles;
         transform.rotation = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
+    }
+
+    private void FixedUpdate()
+    {
+        Vector3 targetLocation = target.position - transform.position + offset;
+        
 
         float distance = targetLocation.magnitude;
 

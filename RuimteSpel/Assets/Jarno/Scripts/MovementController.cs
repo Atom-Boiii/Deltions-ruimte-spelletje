@@ -44,6 +44,7 @@ public class MovementController : MonoBehaviour
 
     [Header("Screen Shake")]
     public Transform cameraObject;
+    public Camera cameraa;
     private Vector3 localposition;
     private float screenShakeDuration;
     private float screenShakeIntensity;
@@ -52,6 +53,8 @@ public class MovementController : MonoBehaviour
     private bool freeLookActive;
     public float freeLookSens = 1;
     private Vector3 originalCameraRot;
+
+    
 
     void Start()
     {
@@ -125,10 +128,15 @@ public class MovementController : MonoBehaviour
         }
 
         //check screenshake
-        if(Input.GetAxisRaw("Vertical") == -1 || Input.GetAxisRaw("Vertical") == 1)
-        {
-            Effect_ScreenShake(.1f, 0.1f);
+        if (currentForwardSpeed <= minMaxForwardSpeed.x || currentForwardSpeed == minMaxForwardSpeed.y)
+        { }else
+        { 
+            if (Input.GetAxisRaw("Vertical") == -1 || Input.GetAxisRaw("Vertical") == 1)
+            {
+                Effect_ScreenShake(.1f, 0.1f);
+            }
         }
+     
 
         /*
         currentForwardSpeed = Mathf.Lerp(currentForwardSpeed, Input.GetAxisRaw("Vertical") * maxForwardSpeed, forwardAcceleration * Time.deltaTime);
@@ -162,10 +170,15 @@ public class MovementController : MonoBehaviour
             cameraObject.transform.localEulerAngles = originalCameraRot;
 
         //backlook
-        if(Input.GetKey(KeyCode.LeftControl))
+        if(Input.GetKey(KeyCode.Space))
         {
             cameraObject.transform.localEulerAngles = new Vector3(cameraObject.transform.localEulerAngles.x,180, cameraObject.transform.localEulerAngles.z);
         }
+
+
+        //FOV / Camera swing
+        cameraa.fieldOfView = 70 + currentForwardSpeed / 4;
+        cameraa.transform.localPosition = new Vector3(localposition.x + mouseDistance.x/1.5f, localposition.y, localposition.z);
     }
 
     public void Effect_ScreenShake(float duration, float intesity)

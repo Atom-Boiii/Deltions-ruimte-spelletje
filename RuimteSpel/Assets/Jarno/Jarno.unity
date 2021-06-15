@@ -711,6 +711,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7320814790664138079, guid: ef7e7b3590439b446b7d231b6b813b6a,
         type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 1244402848}
+    - target: {fileID: 7320814790664138079, guid: ef7e7b3590439b446b7d231b6b813b6a,
+        type: 3}
+      propertyPath: cameraa
+      value: 
+      objectReference: {fileID: 1244402848}
+    - target: {fileID: 7320814790664138079, guid: ef7e7b3590439b446b7d231b6b813b6a,
+        type: 3}
       propertyPath: cameraObject
       value: 
       objectReference: {fileID: 1087682727}
@@ -727,7 +737,7 @@ PrefabInstance:
     - target: {fileID: 7320814790664138079, guid: ef7e7b3590439b446b7d231b6b813b6a,
         type: 3}
       propertyPath: minMaxForwardSpeed.x
-      value: -100
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 7921858453483640661, guid: ef7e7b3590439b446b7d231b6b813b6a,
         type: 3}
@@ -945,6 +955,12 @@ MonoBehaviour:
   initialExplosion: {fileID: 0}
   damageMultiplier: 0
   shieldDamageMultiplier: 0
+--- !u!20 &1244402848 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4371323116393907473, guid: ef7e7b3590439b446b7d231b6b813b6a,
+    type: 3}
+  m_PrefabInstance: {fileID: 879289030}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1414771810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1639,7 +1655,8 @@ MonoBehaviour:
   lookRateSpeed: 90
   rollSpeed: 90
   rollAcceleration: 3.5
-  cameraObject: {fileID: 0}
+  cameraObject: {fileID: 1672503763}
+  cameraa: {fileID: 0}
   freeLookSens: 1
 --- !u!4 &1804588500
 Transform:

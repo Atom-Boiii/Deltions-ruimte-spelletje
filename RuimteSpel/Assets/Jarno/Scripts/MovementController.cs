@@ -45,6 +45,7 @@ public class MovementController : MonoBehaviour
     [Header("Screen Shake")]
     public Transform cameraObject;
     public Camera cameraa;
+    public Vector3 offset;
     private Vector3 localposition;
     private float screenShakeDuration;
     private float screenShakeIntensity;
@@ -177,8 +178,8 @@ public class MovementController : MonoBehaviour
 
 
         //FOV / Camera swing
-        cameraa.fieldOfView = 70 + currentForwardSpeed / 4;
-        cameraa.transform.localPosition = new Vector3(localposition.x + mouseDistance.x/1.5f, localposition.y, localposition.z);
+        cameraa.fieldOfView = 70 + currentForwardSpeed / 2;
+        cameraa.transform.localPosition = new Vector3(localposition.x + mouseDistance.x/1.5f, localposition.y, localposition.z) + offset;
     }
 
     public void Effect_ScreenShake(float duration, float intesity)

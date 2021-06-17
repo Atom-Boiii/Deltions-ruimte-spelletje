@@ -178,7 +178,7 @@ public class MovementController : MonoBehaviour
 
 
         //FOV / Camera swing
-        cameraa.fieldOfView = 70 + currentForwardSpeed / 2;
+        cameraa.fieldOfView = 70 + currentForwardSpeed / 4;
         cameraa.transform.localPosition = new Vector3(localposition.x + mouseDistance.x/1.5f, localposition.y, localposition.z) + offset;
     }
 

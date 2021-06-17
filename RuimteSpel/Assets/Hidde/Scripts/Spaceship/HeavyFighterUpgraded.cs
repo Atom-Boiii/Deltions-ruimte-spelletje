@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class HeavyFighterUpgraded : MonoBehaviour
 {
-    public ParticleSystem shootEffect;
-
     public Transform[] spawnPoints;
 
     public float torque = 5f;
@@ -18,8 +16,6 @@ public class HeavyFighterUpgraded : MonoBehaviour
 
     public float hitRange;
     public LayerMask mask;
-    public float fireRate;
-    public float damage;
 
     public Vector3 offset;
 
@@ -30,6 +26,7 @@ public class HeavyFighterUpgraded : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        canShoot = true;
     }
 
     private void Update()
@@ -37,11 +34,7 @@ public class HeavyFighterUpgraded : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, hitRange, mask))
         {
-            if (Time.time >= nextTimeToFire)
-            {
-                nextTimeToFire = Time.time + 1f / fireRate;
-                Shoot(hit);
-            }
+            ShootMissle();
         }
 
         Vector3 lookLocation = target.position - transform.position;
@@ -61,16 +54,7 @@ public class HeavyFighterUpgraded : MonoBehaviour
         Vector3 translation = Vector3.forward * Mathf.Clamp((distance - 10f) / 50f, 0f, 1f) * thrust;
 
         rb.AddRelativeForce(translation * Time.fixedDeltaTime);
-    }
-
-    private void Shoot(RaycastHit data)
-    {
-        shootEffect.Play();
-        if (data.transform.tag == "Player")
-        {
-            data.transform.GetComponent<Health>().DoDamage(damage);
-        }
-    }
+    }   
 
     private void ShootMissle()
     {

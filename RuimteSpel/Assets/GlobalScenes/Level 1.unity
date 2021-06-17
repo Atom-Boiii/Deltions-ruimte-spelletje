@@ -431,6 +431,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &871644787 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4371323116393907473, guid: ef7e7b3590439b446b7d231b6b813b6a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7921858454409602064}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1493910659
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +529,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -180.84799, z: 0}
+--- !u!4 &1525761923 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 383827064804202793, guid: ef7e7b3590439b446b7d231b6b813b6a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7921858454409602064}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2063596433
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,6 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab86d51fda38fcb4db1fb5b872e96a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  returnDirector: {fileID: 0}
   isExterior: 0
 --- !u!1001 &7921858454409602064
 PrefabInstance:
@@ -656,6 +669,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2493063585434453437, guid: ef7e7b3590439b446b7d231b6b813b6a,
+        type: 3}
+      propertyPath: spherePoint
+      value: 
+      objectReference: {fileID: 1525761923}
     - target: {fileID: 3436830596971067916, guid: ef7e7b3590439b446b7d231b6b813b6a,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -720,6 +738,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320814790664138079, guid: ef7e7b3590439b446b7d231b6b813b6a,
+        type: 3}
+      propertyPath: cameraa
+      value: 
+      objectReference: {fileID: 871644787}
+    - target: {fileID: 7320814790664138079, guid: ef7e7b3590439b446b7d231b6b813b6a,
+        type: 3}
+      propertyPath: offset.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320814790664138079, guid: ef7e7b3590439b446b7d231b6b813b6a,
+        type: 3}
+      propertyPath: offset.z
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 7921858453483640661, guid: ef7e7b3590439b446b7d231b6b813b6a,
         type: 3}

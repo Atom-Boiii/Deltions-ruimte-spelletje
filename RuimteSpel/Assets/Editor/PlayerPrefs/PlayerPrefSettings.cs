@@ -15,6 +15,11 @@ public class PlayerPrefSettings : MonoBehaviour
         PlayerPrefs.SetFloat("MiningRate", 1f);
         PlayerPrefs.SetFloat("StorageSpace", 20);
 
+        PlayerPrefs.SetString("HasSecondMining", "false");
+        PlayerPrefs.SetString("HasSecondShooting", "false");
+
+        PlayerPrefs.SetInt("GameStarted", 0);
+
         PlayerPrefs.SetInt("Thrust 1", 1);
         PlayerPrefs.SetInt("Mining 1", 1);
         PlayerPrefs.SetInt("Shooting 1", 1);

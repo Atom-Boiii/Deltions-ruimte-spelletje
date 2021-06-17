@@ -5,16 +5,23 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     public ParticleSystem[] shootEffects;
-        
-   public float damage = 20;
+    public ParticleSystem[] shootEffects2;
+
+    public float damage = 20;
     public float miningDamage = 20;
 
    public float shootDistance = 50;
     public Transform shootPoint;
+
     public Transform spherePoint;
-   public LayerMask enemyLayer;
+    public Transform spherePoint2;
+
+    public GameObject secondTurret;
+
+    public LayerMask enemyLayer;
 
     public LineRenderer lr;
+    public LineRenderer lr2;
 
     public LayerMask mineralLayer;
     public float mineDistance = 10f;
@@ -30,6 +37,34 @@ public class Shooting : MonoBehaviour
 
     private void Start()
     {
+        if(PlayerPrefs.GetString("HasSecondMining") == "true")
+        {
+            spherePoint2.gameObject.SetActive(true);
+            lr2.enabled = true;
+        }
+        else
+        {
+            spherePoint2.gameObject.SetActive(false);
+            lr2.enabled = false;
+        }
+
+        if (PlayerPrefs.GetString("HasSecondShooting") == "true")
+        {
+            secondTurret.gameObject.SetActive(true);
+            for (int i = 0; i < shootEffects2.Length; i++)
+            {
+                shootEffects2[i].gameObject.SetActive(true);
+            }
+        }
+        else
+        {
+            secondTurret.gameObject.SetActive(false);
+            for (int i = 0; i < shootEffects2.Length; i++)
+            {
+                shootEffects2[i].gameObject.SetActive(false);
+            }
+        }
+
         secondsBetweenMine = PlayerPrefs.GetFloat("MiningRate");
         miningDamage = PlayerPrefs.GetFloat("MiningDamage");
 
@@ -41,6 +76,7 @@ public class Shooting : MonoBehaviour
     void Update()
     {
         lr.SetPosition(0, spherePoint.position);
+        lr2.SetPosition(0, spherePoint2.position);
 
         if (Input.GetMouseButton(0))
         {
@@ -56,10 +92,12 @@ public class Shooting : MonoBehaviour
             if (Physics.Raycast(shootPoint.position, shootPoint.forward, out _hit, mineDistance * 1000, mineralLayer))
             {
                 lr.SetPosition(1, _hit.point);
+                lr2.SetPosition(1, _hit.point);
             }
             else
             {
                 lr.SetPosition(1, spherePoint.position);
+                lr2.SetPosition(1, spherePoint2.position);
             }
 
             if (Time.time >= _Timer)
@@ -72,6 +110,7 @@ public class Shooting : MonoBehaviour
         else
         {
             lr.SetPosition(1, spherePoint.position);
+            lr2.SetPosition(1, spherePoint2.position);
         }
     }
     void Shoot()
@@ -79,6 +118,11 @@ public class Shooting : MonoBehaviour
         for (int i = 0; i < shootEffects.Length; i++)
         {
             shootEffects[i].Play();
+        }
+
+        for (int i = 0; i < shootEffects2.Length; i++)
+        {
+            shootEffects2[i].Play();
         }
 
         RaycastHit hit;

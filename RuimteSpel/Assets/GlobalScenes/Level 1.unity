@@ -153,8 +153,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   astroidPrefab: {fileID: 2442813584484545021, guid: 45b251721f49d1647a1e8376f3817ea4,
     type: 3}
-  startAmount: 1000
-  spawnRange: 2000
+  satellitePrefabs:
+  - {fileID: 255499469684685321, guid: 971beba7fc492f646999a28540229d33, type: 3}
+  - {fileID: 4521231435676151628, guid: 59a057ca94fc26c46b3f3d3c9fef7f06, type: 3}
+  - {fileID: 5228763918677374401, guid: 76eb8cba01fe6c148a3e4540b5b1cb65, type: 3}
+  startAmount: 6000
+  spawnRange: 6000
+  astroidSpawnChance: 10
+  satelliteSpawnChance: 90
 --- !u!4 &168404430
 Transform:
   m_ObjectHideFlags: 0
@@ -200,12 +206,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectPools:
   - Name: All purpose
-    Prefab: {fileID: 1986285087523316762, guid: fa29a10d1349376469bd2543ff495b8d,
+    Prefab: {fileID: 4823281565073596849, guid: b17f5074d75d6674f9fca67a573ead02,
       type: 3}
     Amount: 0
     Objects: []
   - Name: Heavy
-    Prefab: {fileID: 4294363615149270272, guid: 7ce65e3d5dc3b6243836d6a979078ee0,
+    Prefab: {fileID: 5428613271621465676, guid: 0520a676ae36c1b4294860249f0e224b,
       type: 3}
     Amount: 0
     Objects: []
@@ -400,7 +406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &705491712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,13 +425,13 @@ MonoBehaviour:
   ObjectPool: {fileID: 473001004}
   Enemies:
   - EnemyName: All purpose
-    EnemyPrefab: {fileID: 1986285087523316762, guid: fa29a10d1349376469bd2543ff495b8d,
+    EnemyPrefab: {fileID: 4823281565073596849, guid: b17f5074d75d6674f9fca67a573ead02,
       type: 3}
     StartWave: 0
   - EnemyName: Heavy
-    EnemyPrefab: {fileID: 4294363615149270272, guid: 7ce65e3d5dc3b6243836d6a979078ee0,
+    EnemyPrefab: {fileID: 5428613271621465676, guid: 0520a676ae36c1b4294860249f0e224b,
       type: 3}
-    StartWave: 3
+    StartWave: 2
   SpawnRate: 10
   SpawnRateEncrease: 0.005
   RandomEnemy: 0
@@ -433,7 +439,7 @@ MonoBehaviour:
     WaveOption: 2
     EnemyIncreaseAmount: 0
     Waves: []
-    WaveAmount: 5
+    WaveAmount: 10
     EnemyAmount: 3
     TimeBetweenWaves: 25
   WaitForAllEnemiesKilled: 1
@@ -621,7 +627,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -5575,7 +5581,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -10173,6 +10179,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 500955818, guid: ef7e7b3590439b446b7d231b6b813b6a, type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1664782128, guid: ef7e7b3590439b446b7d231b6b813b6a, type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2049940660, guid: ef7e7b3590439b446b7d231b6b813b6a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

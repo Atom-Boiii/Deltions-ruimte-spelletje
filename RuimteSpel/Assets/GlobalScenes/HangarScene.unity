@@ -1976,7 +1976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuScreen: {fileID: 152291410}
   hangarScreen: {fileID: 1393312147}
-  menuCamera: {fileID: 6766810045222253203}
+  menuCamera: {fileID: 500700342}
   hangarCam: {fileID: 500700342}
   playDirector: {fileID: 379414643}
   settingsDirector1: {fileID: 1799957353}

@@ -55,7 +55,12 @@ public class MovementController : MonoBehaviour
     public float freeLookSens = 1;
     private Vector3 originalCameraRot;
 
-    
+
+    public Shooting shootingScript;
+    public Health healthScript;
+
+
+
 
     void Start()
     {
@@ -180,6 +185,26 @@ public class MovementController : MonoBehaviour
         //FOV / Camera swing
         cameraa.fieldOfView = 70 + currentForwardSpeed / 4;
         cameraa.transform.localPosition = new Vector3(localposition.x + mouseDistance.x/1.5f, localposition.y, localposition.z) + offset;
+
+
+        if (Input.GetKey(KeyCode.F))
+        {
+            StartCoroutine(EmergencyMode());
+        }
+
+    }
+
+    IEnumerator EmergencyMode()
+    {
+        currentForwardSpeed = 140;
+        shootingScript.enabled = false;
+        healthScript.maxShield = 0;
+        minMaxForwardSpeed.y = 140;
+        yield return new WaitForSeconds(10);
+        shootingScript.enabled = true;
+        minMaxForwardSpeed.y = 100f;
+        healthScript.maxShield = 100;
+        currentForwardSpeed = 85;
     }
 
     public void Effect_ScreenShake(float duration, float intesity)

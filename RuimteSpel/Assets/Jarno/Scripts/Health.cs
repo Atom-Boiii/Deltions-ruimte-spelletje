@@ -52,6 +52,8 @@ public class Health : MonoBehaviour
         {
             if (currenShield < maxShield)
                 currenShield += shieldRechargeRate * Time.deltaTime;
+            if (currenShield > maxShield)
+                currenShield = maxShield;
         }
 
     }

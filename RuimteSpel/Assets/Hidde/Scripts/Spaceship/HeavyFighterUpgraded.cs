@@ -6,6 +6,8 @@ public class HeavyFighterUpgraded : MonoBehaviour
 {
     public Transform[] spawnPoints;
 
+    public Transform indicator;
+
     public float torque = 5f;
     public float thrust = 10f;
     public float rotationSpeed = 2f;
@@ -25,12 +27,19 @@ public class HeavyFighterUpgraded : MonoBehaviour
 
     private void Start()
     {
+        target = GameObject.Find("PlayerShip").transform;
+
         rb = GetComponent<Rigidbody>();
         canShoot = true;
     }
 
     private void Update()
     {
+        if (indicator != null)
+        {
+            indicator.LookAt(target);
+        }
+
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, hitRange, mask))
         {

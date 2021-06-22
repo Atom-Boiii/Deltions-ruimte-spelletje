@@ -99,4 +99,23 @@ public class Health : MonoBehaviour
     {
         return GetMaxHealth();
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<Astroid>())
+        {
+            collision.gameObject.GetComponent<Astroid>().TakeDamage(100000f);
+            DoDamage(50f);
+        }
+        else if (collision.gameObject.tag == "Enemy")
+        {
+            DoDamage(10f);
+        }
+
+    }
+
+    public void SetShield(float amount)
+    {
+        currenShield = amount;
+    }
 }

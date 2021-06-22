@@ -151,6 +151,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ec05688bc26774ba84254a3300b80e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  astroidPrefab: {fileID: 2442813584484545021, guid: 45b251721f49d1647a1e8376f3817ea4,
+    type: 3}
+  satellitePrefabs:
+  - {fileID: 255499469684685321, guid: 971beba7fc492f646999a28540229d33, type: 3}
+  - {fileID: 4521231435676151628, guid: 59a057ca94fc26c46b3f3d3c9fef7f06, type: 3}
+  - {fileID: 5228763918677374401, guid: 76eb8cba01fe6c148a3e4540b5b1cb65, type: 3}
+  startAmount: 6000
+  spawnRange: 6000
+  astroidSpawnChance: 20
+  satelliteSpawnChance: 80
 --- !u!4 &168404430
 Transform:
   m_ObjectHideFlags: 0
@@ -447,36 +457,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &998728981
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 669259624}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 998728982}
-  m_Layer: 0
-  m_Name: Spacestation (Missing Prefab)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &998728982
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 669259624}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998728981}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1196764847 stripped
 MonoBehaviour:
@@ -5336,6 +5316,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -180.84799, z: 0}
+--- !u!114 &1602276059 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 134318303, guid: ef7e7b3590439b446b7d231b6b813b6a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7921858454409602064}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9160ff1e4eb6f254d83d1d4182b4781f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2063596433
 GameObject:
   m_ObjectHideFlags: 0
@@ -5442,6 +5434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab86d51fda38fcb4db1fb5b872e96a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  returnDirector: {fileID: 0}
+  isExterior: 0
 --- !u!1 &2081616744
 GameObject:
   m_ObjectHideFlags: 0
@@ -10301,6 +10295,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7320814790664138079, guid: ef7e7b3590439b446b7d231b6b813b6a,
+        type: 3}
+      propertyPath: healthScript
+      value: 
+      objectReference: {fileID: 1602276059}
     - target: {fileID: 7320814790664138079, guid: ef7e7b3590439b446b7d231b6b813b6a,
         type: 3}
       propertyPath: shootingScript

@@ -9,7 +9,7 @@ public class PlayerPrefSettings : MonoBehaviour
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetString("hasSave", "true");
 
-        PlayerPrefs.SetFloat("MaxSpeed", 25f);
+        PlayerPrefs.SetFloat("MaxSpeed", 50f);
 
         PlayerPrefs.SetFloat("MiningDamage", 20f);
         PlayerPrefs.SetFloat("MiningRate", 1f);

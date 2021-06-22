@@ -11,14 +11,14 @@ public class Thrust : UpgradeItem
 
         if(level == 0)
         {
-            PlayerPrefs.SetFloat("MaxSpeed", 25f);
+            PlayerPrefs.SetFloat("MaxSpeed", 50f);
         }else if (level == 1)
         {
-            PlayerPrefs.SetFloat("MaxSpeed", 50f);
+            PlayerPrefs.SetFloat("MaxSpeed", 80f);
         }
         else if (level == 2)
         {
-            PlayerPrefs.SetFloat("MaxSpeed", 75f);
+            PlayerPrefs.SetFloat("MaxSpeed", 90f);
         }
         else if (level == 3)
         {

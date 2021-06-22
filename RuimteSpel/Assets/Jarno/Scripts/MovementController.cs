@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MovementController : MonoBehaviour
 {
@@ -196,15 +197,59 @@ public class MovementController : MonoBehaviour
 
     IEnumerator EmergencyMode()
     {
-        currentForwardSpeed = 140;
+        if(PlayerPrefs.GetInt("Evasion 1") == 1)
+        {
+            SetSpeed(140);
+
+            yield return new WaitForSeconds(10);
+
+            ResetSpeed();
+        }
+        if (PlayerPrefs.GetInt("Evasion 1") == 2)
+        {
+            SetSpeed(160);
+
+            yield return new WaitForSeconds(10);
+
+            ResetSpeed();
+        }
+        if (PlayerPrefs.GetInt("Evasion 1") == 3)
+        {
+            SetSpeed(170);
+
+            yield return new WaitForSeconds(10);
+
+            ResetSpeed();
+        }
+        if (PlayerPrefs.GetInt("Evasion 1") == 4)
+        {
+            PlayerPrefs.SetInt("GreenCrystals", 0);
+            SceneManager.LoadScene(0);
+        }
+
+        yield return null;
+    }
+
+    private void SetSpeed(float speed)
+    {
+        currentForwardSpeed = speed;
+
         shootingScript.enabled = false;
-        healthScript.maxShield = 0;
-        minMaxForwardSpeed.y = 140;
-        yield return new WaitForSeconds(10);
+
+        healthScript.SetShield(0f);
+
+        minMaxForwardSpeed.y = speed;
+    }
+
+    private void ResetSpeed()
+    {
         shootingScript.enabled = true;
-        minMaxForwardSpeed.y = 100f;
+
+        minMaxForwardSpeed.y = PlayerPrefs.GetFloat("MaxSpeed");
+
         healthScript.maxShield = 100;
-        currentForwardSpeed = 85;
+
+        currentForwardSpeed = minMaxForwardSpeed.x;
     }
 
     public void Effect_ScreenShake(float duration, float intesity)

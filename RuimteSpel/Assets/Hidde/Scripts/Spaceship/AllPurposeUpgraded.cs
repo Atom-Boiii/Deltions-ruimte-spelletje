@@ -6,6 +6,8 @@ public class AllPurposeUpgraded : MonoBehaviour
 {
     public ParticleSystem shootEffect;
 
+    public Transform indicator;
+
     public float torque = 5f;
     public float thrust = 10f;
     public float rotationSpeed = 2f;
@@ -23,21 +25,18 @@ public class AllPurposeUpgraded : MonoBehaviour
 
     private void Start()
     {
+        target = GameObject.Find("PlayerShip").transform;
+
         rb = GetComponent<Rigidbody>();
     }
 
-    /*
-    private void Bal()
-    {
-        //dir = target.position - transform.position;
-        lookRotation = Quaternion.LookRotation(dir);
-        rotation = Quaternion.Lerp(rotateOrigin.rotation, lookRotation, Time.deltaTime * rotationSpeed).eulerAngles;
-        rotateOrigin.rotation = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
-    }
-    */
-
     private void Update()
     {
+        if (indicator != null)
+        {
+            indicator.LookAt(target);
+        }
+
         RaycastHit hit;
         if(Physics.Raycast(transform.position, transform.forward, out hit, hitRange, mask))
         {
@@ -59,7 +58,6 @@ public class AllPurposeUpgraded : MonoBehaviour
     {
         Vector3 targetLocation = target.position - transform.position + offset;
         
-
         float distance = targetLocation.magnitude;
 
         Vector3 translation = Vector3.forward * Mathf.Clamp((distance - 10f) / 50f, 0f, 1f) * thrust;

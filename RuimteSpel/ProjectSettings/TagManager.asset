@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Crystal
+  - Enemy
+  - DefaultCrystal
+  - PlayerTarget
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - Astroid
   - Crystal
   - Enemy
-  - 
+  - Player
   - 
   - 
   - 

@@ -395,6 +395,7 @@ GameObject:
   - component: {fileID: 181788353}
   - component: {fileID: 181788352}
   - component: {fileID: 181788351}
+  - component: {fileID: 181788354}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -450,6 +451,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &181788354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181788350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce73f531f14259847b0f04015e35bb5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refreshSettingsOnUpdate: 0
+  audioMixer: {fileID: 24300002, guid: 0a7d5ba1ebbf2e14c982b239da024bd9, type: 2}
+  sound:
+  - AudioTrackName: MenuAmbience
+    Settings:
+      AudioClip: {fileID: 8300000, guid: f4cb05e920f4a2a4da4b216e9844e771, type: 3}
+      AudioSource: {fileID: 0}
+      CreateAudioSource: 1
+    AudioSettings:
+      Volume: 0.455
+      loop: 1
+      playOnStart: 1
+    AudioControl:
+      StartAudioOnScene: []
+      StopAudioOnScene: []
+      stopOnNextScene: 0
+      sceneEnabled: 0
 --- !u!1 &205520151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,7 +1221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5729162debf7a04d8963c99476c1715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continueButton: {fileID: 552408067}
 --- !u!114 &1222907180
 MonoBehaviour:
   m_ObjectHideFlags: 0

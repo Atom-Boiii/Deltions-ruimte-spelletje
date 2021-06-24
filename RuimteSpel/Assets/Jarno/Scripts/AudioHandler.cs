@@ -27,6 +27,8 @@ public class AudioHandler : MonoBehaviour
             {
                 sound[i].Settings.AudioSource = this.gameObject.AddComponent<AudioSource>();
                 sound[i].Settings.AudioSource.outputAudioMixerGroup = audioMixer;
+                sound[i].Settings.AudioSource.outputAudioMixerGroup = sound[i].Settings.AudioMixerGroup;
+
             }
 
             //AudioClip
@@ -51,9 +53,12 @@ public class AudioHandler : MonoBehaviour
         if (refreshSettingsOnUpdate)
             RefreshSettings();
 
-        for (int i = 0; i < sound.Count; i++)
+        if (refreshSettingsOnUpdate)
         {
-
+            for (int i = 0; i < sound.Count; i++)
+            {
+                sound[i].Settings.AudioSource.volume = sound[i].AudioSettings.Volume;
+            }
         }
     }
 
@@ -153,8 +158,9 @@ public class AudioHandler_Sound
 [System.Serializable]
 public class AudioHandler_Settings
 {
-    [Header("AudioClip")]
+    [Header("AudioClip/MixerGroup")]
     public AudioClip AudioClip;
+    public AudioMixerGroup AudioMixerGroup;
 
     [Header("AudioSource")]
     public AudioSource AudioSource;

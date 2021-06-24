@@ -1,5 +1,4 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
@@ -11,7 +10,7 @@ public class AudioHandler : MonoBehaviour
     public bool refreshSettingsOnUpdate = false;
     public AudioMixerGroup audioMixer = null;
 
-
+    public static AudioHandler AUDIO;
     public List <AudioHandler_Sound> sound = new List<AudioHandler_Sound>();
 
     private string currentScene;
@@ -83,11 +82,17 @@ public class AudioHandler : MonoBehaviour
 
     public void PlayTrack(string trackname)
     {
+        bool check = false;
         for (int i = 0; i < sound.Count; i++)
         {
             if (sound[i].AudioTrackName == trackname)
+            {
                 AudioHandler_PlayTrack(i);
+                check = true;
+            }
         }
+        if (!check)
+            Debug.Log(trackname + " cannot be found");
     }
     private void AudioHandler_PlayTrack(int trackid)
     {

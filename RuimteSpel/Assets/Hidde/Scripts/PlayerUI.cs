@@ -7,11 +7,13 @@ public class PlayerUI : MonoBehaviour
 {
     public void ReturnToStation()
     {
-        SceneManager.LoadScene(1);
+        PlayerPrefs.SetInt("GameStarted", 1);
+        SceneManager.LoadScene(0);
     }
 
     public void ReturnToMenu()
     {
+        PlayerPrefs.SetInt("GameStarted", 0);
         SceneManager.LoadScene(0);
     }
 }

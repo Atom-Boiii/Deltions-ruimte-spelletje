@@ -47,7 +47,7 @@ public class Upgrade
             colors.disabledColor = Color.green;
 
             levelButton.colors = colors;
-            AudioHandler.AUDIO.PlayTrack("UpgradeSound");
+            //AudioHandler.AUDIO.PlayTrack("UpgradeSound");
         }
         else if(isPurchased == 0)
         {

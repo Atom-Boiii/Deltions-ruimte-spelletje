@@ -92,6 +92,7 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("GameStarted", 0);
 
         EditorApplication.isPlaying = false;
+        Application.Quit();
     }
 
     private void ClearAllPrefs()

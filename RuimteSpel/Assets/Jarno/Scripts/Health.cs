@@ -85,7 +85,7 @@ public class Health : MonoBehaviour
         controller.enabled = false;
         Cursor.visible = true;
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
 
         deathScreen.SetActive(true);
         PlayerPrefs.SetInt("GreenCrystals", 0);

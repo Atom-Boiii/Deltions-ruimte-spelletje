@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviour
 
     private void Update()
     {
-        greenCrystalText.text = "Green crystals: " + greenCrystals.ToString() + "/" + maxSize.ToString();
+        greenCrystalText.text = "Green crystals: " + greenCrystals.ToString();
 
         if(inventoryAmount >= 0 && inventoryAmount < maxSize)
         {

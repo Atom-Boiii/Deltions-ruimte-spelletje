@@ -60,7 +60,7 @@ public class MovementController : MonoBehaviour
     public Shooting shootingScript;
     public Health healthScript;
 
-
+    private AudioHandler audioHandler;
 
 
     void Start()
@@ -136,11 +136,14 @@ public class MovementController : MonoBehaviour
 
         //check screenshake
         if (currentForwardSpeed <= minMaxForwardSpeed.x || currentForwardSpeed == minMaxForwardSpeed.y)
-        { }else
+        {
+            AudioHandler.AUDIO.StopTrack("ThrusterSound");
+        }else
         { 
             if (Input.GetAxisRaw("Vertical") == -1 || Input.GetAxisRaw("Vertical") == 1)
             {
                 Effect_ScreenShake(.1f, 0.1f);
+                AudioHandler.AUDIO.StartTrack("fehkujls");
             }
         }
      

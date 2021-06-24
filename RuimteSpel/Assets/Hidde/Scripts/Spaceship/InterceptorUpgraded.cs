@@ -68,6 +68,7 @@ public class InterceptorUpgraded : MonoBehaviour
 
     private void Shoot(RaycastHit data)
     {
+        AudioHandler.AUDIO.PlayTrack("LaserShoot2");
         for (int i = 0; i < shootEffect.Length; i++)
         {
             shootEffect[i].Play();

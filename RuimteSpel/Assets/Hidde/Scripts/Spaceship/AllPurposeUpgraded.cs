@@ -67,6 +67,7 @@ public class AllPurposeUpgraded : MonoBehaviour
 
     private void Shoot(RaycastHit data)
     {
+        AudioHandler.AUDIO.PlayTrack("LaserShoot2");
         shootEffect.Play();
         if(data.transform.tag == "Player")
         {

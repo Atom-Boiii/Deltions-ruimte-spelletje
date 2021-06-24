@@ -37,7 +37,7 @@ public class Shooting : MonoBehaviour
 
     private void Start()
     {
-        if(PlayerPrefs.GetString("HasSecondMining") == "true")
+        if (PlayerPrefs.GetString("HasSecondMining") == "true")
         {
             spherePoint2.gameObject.SetActive(true);
             lr2.enabled = true;
@@ -115,9 +115,12 @@ public class Shooting : MonoBehaviour
     }
     void Shoot()
     {
+        AudioHandler.AUDIO.PlayTrack("LaserShoot");
+
         for (int i = 0; i < shootEffects.Length; i++)
         {
             shootEffects[i].Play();
+            
         }
 
         for (int i = 0; i < shootEffects2.Length; i++)
@@ -142,6 +145,7 @@ public class Shooting : MonoBehaviour
             if (hit.transform.GetComponent<Astroid>() != null)
             {
                 hit.transform.GetComponent<Astroid>().TakeDamage(miningDamage);
+                AudioHandler.AUDIO.PlayTrack("MiningSound");
             }
             lr.enabled = true;
             checkhit = true;

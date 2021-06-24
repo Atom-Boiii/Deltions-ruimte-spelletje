@@ -17,6 +17,8 @@ public class AudioHandler : MonoBehaviour
 
     void Start()
     {
+        AUDIO = this;
+
         //PlayOnStart
         for (int i = 0; i < sound.Count; i++)
         {
@@ -94,6 +96,26 @@ public class AudioHandler : MonoBehaviour
         if (!check)
             Debug.Log(trackname + " cannot be found");
     }
+
+    public void StartTrack(string trackname)
+    {
+        for (int i = 0; i < sound.Count; i++)
+        {
+            if (sound[i].AudioTrackName == trackname)
+                if (!sound[i].Settings.AudioSource.isPlaying)
+                    AudioHandler_PlayTrack(i);
+        }
+    }
+    
+    public void StopTrack(string trackname)
+    {
+        for (int i = 0; i < sound.Count; i++)
+        {
+            if (sound[i].AudioTrackName == trackname)
+                sound[i].Settings.AudioSource.Stop();
+        }
+    }
+
     private void AudioHandler_PlayTrack(int trackid)
     {
         sound[trackid].Settings.AudioSource.Play();

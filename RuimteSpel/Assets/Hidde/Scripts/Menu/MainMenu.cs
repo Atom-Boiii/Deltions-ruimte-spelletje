@@ -20,10 +20,14 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+
         if(PlayerPrefs.GetInt("GameStarted") == 1)
         {
             menuScreen.SetActive(false);
             menuCamera.SetActive(false);
+
+            FindObjectOfType<SceneController>().CallStart();
+
             hangarCam.SetActive(true);
             hangarScreen.SetActive(true);
         }
@@ -31,6 +35,7 @@ public class MainMenu : MonoBehaviour
         {
             menuScreen.SetActive(true);
             menuCamera.SetActive(true);
+
             hangarCam.SetActive(false);
             hangarScreen.SetActive(false);
         }
@@ -91,7 +96,6 @@ public class MainMenu : MonoBehaviour
 
         PlayerPrefs.SetInt("GameStarted", 0);
 
-        EditorApplication.isPlaying = false;
         Application.Quit();
     }
 
